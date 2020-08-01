@@ -2,8 +2,6 @@
 using Forms9Patch;
 using System;
 using Xamarin.Essentials;
-using System.Runtime.InteropServices;
-using System.IO;
 
 namespace GSTBillGenerator.Views
 {
@@ -28,7 +26,6 @@ namespace GSTBillGenerator.Views
             };
 
 
-            shareButton.Clicked += ShareButton_Clicked;
         }
 
         async void ShareButton_Clicked(object sender, EventArgs e)
@@ -51,6 +48,11 @@ namespace GSTBillGenerator.Views
             }
             else
                 using (Toast.Create(null, "PDF Export is not available on this device")) { }
+        }
+
+        private void SaveButtonClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
