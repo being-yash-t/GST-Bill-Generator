@@ -6,12 +6,19 @@
   <Application.Resources>
 
     <!-- Application resource dictionary -->
-
         <ResourceDictionary>
+
+            <Color x:Key="DarkColor">#3BACFF</Color>
+            <Color x:Key="LightColor">#E3F2FD</Color>
+
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="Visual" Value="Material"/>
             </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkColor}"/>
+            </Style>
         </ResourceDictionary>
 
-  </Application.Resources>
+    </Application.Resources>
 </prism:PrismApplication>
