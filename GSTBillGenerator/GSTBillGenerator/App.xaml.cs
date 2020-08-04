@@ -1,39 +1,27 @@
-using Prism;
-using Prism.Ioc;
-using GSTBillGenerator.ViewModels;
-using GSTBillGenerator.Views;
-using Xamarin.Essentials.Interfaces;
-using Xamarin.Essentials.Implementation;
+﻿using GstBillGenerator.Pages;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace GSTBillGenerator
+namespace GstBillGenerator
 {
-    public partial class App
+    public partial class App : Application
     {
-        /* 
-         * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
-         * This imposes a limitation in which the App class must have a default constructor. 
-         * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
-         */
-        public App() : this(null) { }
-
-        public App(IPlatformInitializer initializer) : base(initializer) { }
-
-        protected override async void OnInitialized()
+        public App()
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/PrintBillPage");
+            MainPage = new GenerateBillPage();
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        protected override void OnStart()
         {
-            containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+        }
 
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<PrintBillPage, PrintBillPageViewModel>();
+        protected override void OnSleep()
+        {
+        }
+
+        protected override void OnResume()
+        {
         }
     }
 }

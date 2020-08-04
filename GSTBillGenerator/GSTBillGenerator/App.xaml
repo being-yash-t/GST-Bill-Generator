@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             x:Class="GSTBillGenerator.App">
-  <Application.Resources>
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="GstBillGenerator.App">
+    <Application.Resources>
 
-    <!-- Application resource dictionary -->
         <ResourceDictionary>
 
             <Color x:Key="DarkColor">#3BACFF</Color>
@@ -16,9 +17,10 @@
             </Style>
 
             <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="10"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource DarkColor}"/>
             </Style>
         </ResourceDictionary>
 
     </Application.Resources>
-</prism:PrismApplication>
+</Application>

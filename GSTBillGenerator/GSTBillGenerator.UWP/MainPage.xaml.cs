@@ -1,6 +1,4 @@
-﻿using Prism;
-using Prism.Ioc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace GSTBillGenerator.UWP
+namespace GstBillGenerator.UWP
 {
     public sealed partial class MainPage
     {
@@ -23,15 +21,7 @@ namespace GSTBillGenerator.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new GSTBillGenerator.App(new UwpInitializer()));
-        }
-    }
-
-    public class UwpInitializer : IPlatformInitializer
-    {
-        public void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            // Register any platform specific implementations
+            LoadApplication(new GstBillGenerator.App());
         }
     }
 }

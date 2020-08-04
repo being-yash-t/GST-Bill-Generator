@@ -1,10 +1,11 @@
-﻿using Foundation;
-using Prism;
-using Prism.Ioc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Foundation;
 using UIKit;
 
-
-namespace GSTBillGenerator.iOS
+namespace GstBillGenerator.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -23,17 +24,9 @@ namespace GSTBillGenerator.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
-            LoadApplication(new App(new iOSInitializer()));
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
-        }
-    }
-
-    public class iOSInitializer : IPlatformInitializer
-    {
-        public void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            // Register any platform specific implementations
         }
     }
 }

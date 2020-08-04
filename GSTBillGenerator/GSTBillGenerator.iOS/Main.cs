@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace GSTBillGenerator.iOS
+namespace GstBillGenerator.iOS
 {
     public class Application
     {
