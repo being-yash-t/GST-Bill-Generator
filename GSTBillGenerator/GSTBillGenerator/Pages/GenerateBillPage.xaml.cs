@@ -16,15 +16,7 @@ namespace GstBillGenerator.Pages
             WebViewPrintEffect.ApplyTo(webView);
             webView.Source = new HtmlWebViewSource
             {
-                Html = @"
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Convert to PDF</h1>
-<p>This html will be converted to a PDF.</p>
-</body>
-</html>
-"
+                Html = Properties.Resources.template1
             };
         }
 
