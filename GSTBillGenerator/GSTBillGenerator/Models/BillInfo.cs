@@ -14,5 +14,6 @@ namespace GSTBillGenerator.Models
 
         string bottomText { get; set; }
 
+        string cityName { get; set; }
     }
 }

@@ -42,10 +42,5 @@ namespace GstBillGenerator.Pages
                 await DisplayAlert("Pdf Generation failed", "PDF Export is not available on this device", "Cancel");
 
         }
-
-        private void SaveButtonClicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
