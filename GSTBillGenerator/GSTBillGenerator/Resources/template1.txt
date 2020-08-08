@@ -5,166 +5,240 @@
     <meta charset="utf-8">
     <title>GST BILL</title>
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-
+    <style>
+        li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        ul {
+            padding-left: 0px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+    <table style="border:1px solid #999999;" width="100%" border="0" cellpadding="0" cellspacing="0" class="tb">
+        <tbody>
+            <tr>
+                <!--Page HeadLine-->
+                <td height="35" colspan="4" align="center" class="txt" style="border-bottom:1px solid #ddd; font-weight:800; font-family: 'Muli', sans-serif;">TAX INVOICE</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2">
+                    <!--Info Head-->
+                    <table width="100%" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="50%" valign="bottom" style=" font-size:28px; font-weight:800; font-family: 'Muli', sans-serif;">FIRM NAME</td>
+                                <td width="50" valign="bottom" style=" font-size:16px; font-family: 'Muli', sans-serif;"><strong>Bayer: </strong>BayerName</td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>GSTIN: </strong>JJSASJJJJKKJ11111, </td>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>GSTIN: </strong>JJSASJJJJKKJ11111, </td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>Ph No: </strong>546466546546</td>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>Site Address: </strong>ajsdfl asdlkjf as;df ;asdfjasdjfasjdfa;sdfj j;</td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>State: </strong>Address here</td>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>State: </strong>Address here</td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>Email: </strong>email@example.com</td>
+                                <td style=" font-size:13px; color:#000; padding:5px; padding-left: 0px; font-family: 'Muli', sans-serif;"><strong>Email: </strong>email@example.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td>&nbsp;</td>
 
+            </tr>
+            <tr>
+                <td height="36" colspan="4">&nbsp;</td>
+            </tr>
+            <tr>
+                <td width="3%">&nbsp;</td>
+                <td colspan="2">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tb1">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <!--Bill Info Head-->
+                                    <table style="border:1px solid #999999;" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td width="25%" height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice No</span></strong></td>
+                                                <td width="25%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">02</span></td>
+                                                <td width="25%"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Delivery Challan No: </span></strong></td>
+                                                <td width="25%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">As per ledger attached</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice Date</span></strong></td>
+                                                <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">22 / 12 / 2020</span></td>
+                                                <td><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Date of Delivery Challan: </span></strong></td>
+                                                <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">As per ledger attached</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="31">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!--items table-->
+                                    <!--######## check table height (Hard coded)-->
+                                    <table style="border:1px solid #999999; height: 12cm;" width="100%" border="1" cellpadding="0" cellspacing="0" class="tb2">
+                                        <tbody>
+                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
+                                                <td width="6%" height="30" align="center"><strong>SR. NO.</strong></td>
+                                                <td width="48%" align="center"><strong>Particulars</strong></td>
+                                                <td width="10%" align="center"><strong>HSN Code</strong></td>
+                                                <td width="8%" align="center"><strong>QTY</strong></td>
+                                                <td width="8%" align="center"><strong>Rate</strong></td>
+                                                <td width="6%" align="center"><strong>Per</strong></td>
+                                                <td width="18%" align="center"><strong>Amount</strong></td>
+                                            </tr>
+                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; height: 70%; vertical-align: top;">
+                                                <!--Sr No-->
+                                                <td>
+                                                    <ul>
+                                                        <li>1.</li>
+                                                        <li>2.</li>
+                                                        <li>3.</li>
+                                                        <li>4.</li>
+                                                        <li>5.</li>
+                                                    </ul>
+                                                </td>
+                                                <!--Item Name-->
+                                                <td>
+                                                    <ul style="text-align: start; padding-left: 8px;">
+                                                        <li>Items</li>
+                                                        <li>H</li>
+                                                        <li>H</li>
+                                                        <li>H</li>
+                                                        <li>H</li>
+                                                    </ul>
+                                                </td>
+                                                <!--HSN Code-->
+                                                <td>
+                                                    <ul>
+                                                        <li>10</li>
+                                                        <li>23</li>
+                                                        <li>23</li>
+                                                        <li>32</li>
+                                                        <li>23</li>
+                                                    </ul>
+                                                </td>
+                                                <!--Quantity-->
+                                                <td>
+                                                    <ul>
+                                                        <li>10</li>
+                                                        <li>23</li>
+                                                        <li>23</li>
+                                                        <li>32</li>
+                                                        <li>23</li>
+                                                    </ul>
+                                                </td>
+                                                <!--Rate-->
+                                                <td>
+                                                    <ul>
+                                                        <li>10</li>
+                                                        <li>23</li>
+                                                        <li>23</li>
+                                                        <li>32</li>
+                                                        <li>23</li>
+                                                    </ul>
+                                                </td>
+                                                <!--Per-->
+                                                <td>
+                                                    <ul>
+                                                        <li>10</li>
+                                                        <li>23</li>
+                                                        <li>23</li>
+                                                        <li>32</li>
+                                                        <li>23</li>
+                                                    </ul>
+                                                </td>
+                                                <!--Amount-->
+                                                <td>
+                                                    <ul>
+                                                        <li>10</li>
+                                                        <li>23</li>
+                                                        <li>23</li>
+                                                        <li>32</li>
+                                                        <li>23</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
 
-    <div id="panel">
-        <table style="border:1px solid #999999;" width="100%" border="0" cellpadding="0" cellspacing="0" class="tb">
-            <tbody>
-                <tr>
-                    <td height="35" colspan="4" align="center" class="txt" style="border-bottom:1px solid #ddd; color:#0FBAFF; font-weight:800; font-family: 'Muli', sans-serif;">TAX INVOICE</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td colspan="2">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tbody>
-                                <tr>
-                                    <td height="49" valign="bottom" style=" font-size:20px; color:#0FBAFF; font-weight:800; font-family: 'Muli', sans-serif;">HTML Invoice Templates</td>
-                                </tr>
-                                <tr>
-                                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">GSTIN : JJSASJJJJKKJ11111, </td>
-                                </tr>
-                                <tr>
-                                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Pan No : AA444111FFFF</td>
-                                </tr>
-                                <tr>
-                                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Office : Address here</td>
-                                </tr>
-                                <tr>
-                                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Email.email@example.com, Website. www.example.com</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td height="36" colspan="4">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td width="3%">&nbsp;</td>
-                    <td colspan="2">
-                        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tb1">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <table style="border:1px solid #999999;" width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td width="16%" height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Client Name </span></strong></td>
-                                                    <td width="49%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Mr.Ramakant SIngh</span></td>
-                                                    <td width="20%"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice Date</span></strong></td>
-                                                    <td width="15%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">07 June 2020</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Address</span></strong></td>
-                                                    <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Sa-3/74 A-1 Gha Pandeypur Varanasi </span></td>
-                                                    <td><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice Number</span></strong></td>
-                                                    <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">#333GHG</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">GSTIN</span></strong></td>
-                                                    <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">0748MJKKLLL***</span></td>
-                                                    <td>&nbsp;</td>
-                                                    <td>&nbsp;</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="31" style="border-top:1px solid #999999;">&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table style="border:1px solid #999999;" width="100%" border="1" cellpadding="0" cellspacing="0" class="tb2">
-                                            <tbody>
-                                                <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
-                                                    <td width="7%" height="30" align="center"><strong>S.N</strong></td>
-                                                    <td width="60%" align="center"><strong>Description </strong></td>
-                                                    <td width="8%" align="center"><strong>Qty </strong></td>
-                                                    <td width="12%" align="center"><strong>Rate </strong></td>
-                                                    <td width="13%" align="center"><strong>Amount</strong></td>
-                                                </tr>
-                                                <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
-                                                    <td height="30" align="center">1.</td>
-                                                    <td align="center"> Bath Shoap</td>
-                                                    <td align="center">10</td>
-                                                    <td align="center">350</td>
-                                                    <td align="center">3500</td>
-                                                </tr>
-                                                <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
-                                                    <td height="30" align="center">&nbsp;</td>
-                                                    <td align="center">&nbsp;</td>
-                                                    <td align="center">&nbsp;</td>
-                                                    <td align="center"><strong>TOTAL</strong></td>
-                                                    <td align="center">&nbsp;</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table width="100%" border="1" cellpadding="0" cellspacing="0" class="tb2">
-                                            <tbody>
-                                                <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
-                                                    <td width="7%" height="48" align="center">&nbsp;</td>
-                                                    <td width="60%" align="center">&nbsp;</td>
-                                                    <td align="center">Add CGST : <br>Add SGST :</td>
-                                                    <td width="13%" align="center">&nbsp;</td>
-                                                </tr>
-                                                <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
-                                                    <td height="31" align="center">&nbsp;</td>
-                                                    <td align="center">&nbsp;</td>
-                                                    <td align="center"><strong>Grand Total</strong></td>
-                                                    <td align="center">&nbsp;</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>&nbsp;</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                    <td width="3%">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="4">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td height="32">&nbsp;</td>
-                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;" width="47%" height="32"><strong>Date : 07 JUNE 2020</strong></td>
-                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;" width="47%" align="right"><strong>For : Online Reciept</strong></td>
-                    <td height="32">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="4">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td height="72">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;" align="right" valign="bottom"><strong>Authorised Signature</strong></td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="4">&nbsp;</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
+                                                <td height="30 " align="center ">&nbsp;</td>
+                                                <td align="center ">&nbsp;</td>
+                                                <td align="center ">&nbsp;</td>
+                                                <td align="center ">&nbsp;</td>
+                                                <td align="center ">&nbsp;</td>
+                                                <td align="center "><strong>TOTAL</strong></td>
+                                                <!--Total-->
+                                                <td align="center ">34,433.00/-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table width="100% " border="1 " cellpadding="0 " cellspacing="0 " class="tb2 ">
+                                        <tbody>
+                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
+                                                <td width="7% " height="48 " align="center ">&nbsp;</td>
+                                                <td width="60% " align="center ">&nbsp;</td>
+                                                <td align="center ">Add CGST : <br>Add SGST :</td>
+                                                <!--C GST & S GST-->
+                                                <td width="13% " align="center ">3423.34<br>3242.34</td>
+                                            </tr>
+                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
+                                                <td height="31 " align="center ">&nbsp;</td>
+                                                <td align="center ">&nbsp;</td>
+                                                <td align="center "><strong>Grand Total</strong></td>
+                                                <!--Grand Total-->
+                                                <td align="center ">34,675.00/-</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td width="3% ">&nbsp;</td>
+            </tr>
 
-
+            <tr>
+                <table style="border:1px solid #999999; border-top: 0px;" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="33%" style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; font-weight: bold;" valign="bottom ">Receiver's Signature & Stamp</td>
+                        <td width="33%" style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; font-weight: bold;" align="center" valign="bottom "><strong>Subject to city Jurisdiction</strong></td>
+                        <td width="33%" style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; font-weight: bold;" align="end" valign="bottom ">Authorised Signatory</td>
+                    </tr>
+                </table>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
