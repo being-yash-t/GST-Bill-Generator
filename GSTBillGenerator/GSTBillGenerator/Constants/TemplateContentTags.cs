@@ -3,44 +3,44 @@
     static class TemplateContentTags
     {
         // Info Head
-        const string FirmName = "{FIRM_NAME}"; // Has multiple positions
-        const string BayerName = "{BAYER_NAME}";
-        const string FirmAddress = "{FIRM_ADDRESS}";
-        const string FirmPhoneNo = "{FIRM_PHONE_NO}";
-        const string SiteAddress = "{SITE_ADDRESS}";
-        const string FirmGstin = "{FIRM_GSTIN}";
-        const string BayerGstin = "{BAYER_GSTIN}";
-        const string FirmState = "{FIRM_STATE}";
-        const string BayerState = "{BAYER_STATE}";
-        const string FirmEmail = "{SITE_ADDRESS}";
-        const string BayerEmail = "{BAYER_EMAIL}";
+        public const string FirmName = "{FIRM_NAME}"; // Has multiple positions
+        public const string BayerName = "{BAYER_NAME}";
+        public const string FirmAddress = "{FIRM_ADDRESS}";
+        public const string FirmPhoneNo = "{FIRM_PHONE_NO}";
+        public const string SiteAddress = "{SITE_ADDRESS}";
+        public const string FirmGstin = "{FIRM_GSTIN}";
+        public const string BayerGstin = "{BAYER_GSTIN}";
+        public const string FirmState = "{FIRM_STATE}";
+        public const string BayerState = "{BAYER_STATE}";
+        public const string FirmEmail = "{SITE_ADDRESS}";
+        public const string BayerEmail = "{BAYER_EMAIL}";
 
         // Bill Info
-        const string InvoiceNo = "{INVOICE_NO}";
-        const string InvoiceDate = "{INVOICE_DATE}";
+        public const string InvoiceNo = "{INVOICE_NO}";
+        public const string InvoiceDate = "{INVOICE_DATE}";
 
         // Items Table
-        const string SrNos = "{SR_NOS}"; // separated with <li></li>
-        const string Particulars = "{PARTICULARS}"; // separated with <li></li>
-        const string HsnCodes = "{HSN_CODES}"; // separated with <li></li>
-        const string QuantityColumn = "{QUANTITY_COL}"; // separated with <li></li>
-        const string RateColumn = "{RATE_COL}"; // separated with <li></li>
-        const string PerColumn = "{PER_COL}"; // separated with <li></li>
-        const string AmountsColumn = "{AMOUNTS_COL}"; // separated with <li></li>
-        const string Total = "{TOTAL_AMOUNT}";
+        public const string SrNos = "{SR_NOS}"; // separated with <li></li>
+        public const string Particulars = "{PARTICULARS}"; // separated with <li></li>
+        public const string HsnCodes = "{HSN_CODES}"; // separated with <li></li>
+        public const string QuantityColumn = "{QUANTITY_COL}"; // separated with <li></li>
+        public const string RateColumn = "{RATE_COL}"; // separated with <li></li>
+        public const string PerColumn = "{PER_COL}"; // separated with <li></li>
+        public const string AmountsColumn = "{AMOUNTS_COL}"; // separated with <li></li>
+        public const string Total = "{TOTAL_AMOUNT}";
 
         // Bank Info & GST Table
-        const string BankOwnerName = "{BANK_OWNER_NAME}";
-        const string BankName = "{BANK_NAME}";
-        const string BankAccountNo = "{BANK_ACCOUNT_NO}";
-        const string BankBranchName = "{BANK_BRANCH_NAME}";
-        const string IFSCCode = "{IFSC_CODE}";
-        const string CGSTValue = "{CGST_VALUE}";
-        const string SGSTValue = "{SGST_VALUE}";
-        const string RoundUpValue = "{ROUNDUP_VALUE}";
-        const string GrandTotalValue = "{GRAND_TOTAL_VALUE}";
+        public const string BankOwnerName = "{BANK_OWNER_NAME}";
+        public const string BankName = "{BANK_NAME}";
+        public const string BankAccountNo = "{BANK_ACCOUNT_NO}";
+        public const string BankBranchName = "{BANK_BRANCH_NAME}";
+        public const string IFSCCode = "{IFSC_CODE}";
+        public const string CGSTValue = "{CGST_VALUE}";
+        public const string SGSTValue = "{SGST_VALUE}";
+        public const string RoundUpValue = "{ROUNDUP_VALUE}";
+        public const string GrandTotalValue = "{GRAND_TOTAL_VALUE}";
 
         // Other
-        const string CityName = "{CITY_NAME}";
+        public const string CityName = "{CITY_NAME}";
     }
 }
