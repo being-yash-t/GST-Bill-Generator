@@ -3,14 +3,14 @@
     class BayerData
     {
 
-        string bayerName { get; set; }
+        public string bayerName { get; set; }
 
-        string siteAddress { get; set; }
+        public string siteAddress { get; set; }
 
-        string GstTin { get; set; }
+        public string GstTin { get; set; }
 
-        string stateName { get; set; }
+        public string stateName { get; set; }
 
-        int stateCode { get; set; }
+        public string email { get; set; }
     }
 }

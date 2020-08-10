@@ -1,6 +1,7 @@
 ﻿using Forms9Patch;
 using GstBillGenerator.Models;
 using GstBillGenerator.Services;
+using GSTBillGenerator.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -30,15 +31,34 @@ namespace GstBillGenerator.Pages
                 title = $"Item {i}",
                 hsnCode = 1244,
                 rate = 1200,
-                quantity = 12.55,
+                quantity = 12.54,
                 per = "Brass"
             });
 
             await Task.Run(() => {
-                webView.Source = new HtmlWebViewSource
-                {
-                    Html = cartItems.EnterCartItems(Properties.Resources.template1)
-                };
+                string htmlSource = cartItems.EnterCartItems(Properties.Resources.template1);
+                htmlSource = ModelToHtmlHelpers.EnterFirmBayerInfo(
+                    new FirmInfo 
+                    {
+                        firmName = "dw tsk Jsk ln", 
+                        address = "Sad param nagar, Switzz, Dombewalli",
+                        phoneNo = "9422245630",
+                        GstTin = "abcdefghijklmnopqrst",
+                        stateName = "Maharashtra - 27",
+                        email = "someeeePurnn@somthing.com"
+                    },
+                    new BayerData 
+                    { 
+                        bayerName = "Gayatri Enterprise",
+                        siteAddress = "NCYP College, College Group, Model Colony, Dombewalli",
+                        GstTin = "uvwxyz1234667890",
+                        stateName = "Maharashtra - 27",
+                        email = "somehting@hehehe.com"
+                    },
+                    htmlSource
+                );
+
+                webView.Source = new HtmlWebViewSource { Html = htmlSource };
             });
         }
 

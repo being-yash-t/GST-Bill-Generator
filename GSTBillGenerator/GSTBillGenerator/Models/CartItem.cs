@@ -6,7 +6,7 @@
 
         public int hsnCode { get; set; }
 
-        public double rate { get; set; }
+        public int rate { get; set; }
 
         public double quantity { get; set; }
 

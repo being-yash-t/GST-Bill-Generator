@@ -12,7 +12,7 @@
         public const string BayerGstin = "{BAYER_GSTIN}";
         public const string FirmState = "{FIRM_STATE}";
         public const string BayerState = "{BAYER_STATE}";
-        public const string FirmEmail = "{SITE_ADDRESS}";
+        public const string FirmEmail = "{FIRM_EMAIL}";
         public const string BayerEmail = "{BAYER_EMAIL}";
 
         // Bill Info
