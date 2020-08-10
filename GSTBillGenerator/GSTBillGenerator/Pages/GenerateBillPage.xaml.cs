@@ -35,7 +35,7 @@ namespace GstBillGenerator.Pages
                 per = "Brass"
             });
 
-            await Task.Run(() => {
+            string htmlToUse = await Task.Run(() => {
                 BillInfo billInfo = new BillInfo
                 {
                     cityName = "Mumbai",
@@ -80,8 +80,10 @@ namespace GstBillGenerator.Pages
                     
                 }.EnterBankDetails(htmlSource);
 
-                webView.Source = new HtmlWebViewSource { Html = htmlSource };
+                return htmlSource ;
             });
+            webView.Source = new HtmlWebViewSource { Html = htmlToUse };
+
         }
 
         async void ShareButton_Clicked(object sender, EventArgs e)
@@ -106,5 +108,6 @@ namespace GstBillGenerator.Pages
                 await DisplayAlert("Pdf Generation failed", "PDF Export is not available on this device", "Cancel");
 
         }
+       
     }
 }

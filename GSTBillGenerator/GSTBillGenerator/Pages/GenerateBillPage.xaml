@@ -9,11 +9,11 @@
     <ContentPage.Content>
         <Grid RowDefinitions="*,Auto,Auto">
             
-            <WebView x:Name="webView" />
+            <WebView x:Name="webView"/>
 
             <Button Clicked="ShareButton_Clicked" Margin="8"
             Text="Share PDF" Grid.Row="1" />
-
+            
         </Grid>
     </ContentPage.Content>
     
