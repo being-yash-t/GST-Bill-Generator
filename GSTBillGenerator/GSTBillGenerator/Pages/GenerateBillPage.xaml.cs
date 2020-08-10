@@ -58,6 +58,16 @@ namespace GstBillGenerator.Pages
                     htmlSource
                 );
 
+                htmlSource = new BankDetails 
+                {
+                    bankName = "Some Bank Name",
+                    accountName = "Some Bank User",
+                    accountNo = "23425435345345",
+                    bankBranchName = "Some Branch",
+                    bankIFSCCode = "GSD45345"
+                    
+                }.EnterBankDetails(htmlSource);
+
                 webView.Source = new HtmlWebViewSource { Html = htmlSource };
             });
         }

@@ -2,14 +2,14 @@
 {
     class BankDetails
     {
-        string accountName { get; set; }
+        public string accountName { get; set; }
 
-        string bankName { get; set; }
+        public string bankName { get; set; }
 
-        string bankIFSCCode { get; set; }
+        public string bankIFSCCode { get; set; }
 
-        string bankBranchName { get; set; }
+        public string bankBranchName { get; set; }
 
-        string accountNo { get; set; }
+        public string accountNo { get; set; }
     }
 }

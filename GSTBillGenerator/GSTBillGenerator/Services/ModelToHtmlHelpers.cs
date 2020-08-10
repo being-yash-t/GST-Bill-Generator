@@ -7,6 +7,17 @@ namespace GstBillGenerator.Services
 {
     static class ModelToHtmlHelpers
     {
+        public static string EnterBankDetails(this BankDetails bankDetails, string htmlToParse)
+        {
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.BankOwnerName, bankDetails.accountName);
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.BankAccountNo, bankDetails.accountNo);
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.BankBranchName, bankDetails.bankBranchName);
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.IFSCCode, bankDetails.bankIFSCCode);
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.BankName, bankDetails.bankName);
+
+            return htmlToParse;
+        }
+
         public static string EnterFirmBayerInfo(FirmInfo firmInfo, BayerData bayerData, string htmlToParse)
         {
             htmlToParse = htmlToParse.Replace(TemplateContentTags.FirmName, firmInfo.firmName.ToUpper());
