@@ -2,14 +2,16 @@
 {
     class CartItem
     {
-        string title { get; set; }
+        public string title { get; set; }
 
-        int hsnCode { get; set; }
+        public int hsnCode { get; set; }
 
-        double rate { get; set; }
+        public double rate { get; set; }
 
-        double quantity { get; set; }
+        public double quantity { get; set; }
 
-        string per { get; set; }
+        public string per { get; set; }
+
+        public double getAmount { get => rate * quantity; }
     }
 }

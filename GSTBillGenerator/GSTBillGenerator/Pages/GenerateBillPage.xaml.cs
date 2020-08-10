@@ -1,5 +1,9 @@
 ﻿using Forms9Patch;
+using GstBillGenerator.Models;
+using GstBillGenerator.Services;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,10 +18,28 @@ namespace GstBillGenerator.Pages
             InitializeComponent();
 
             WebViewPrintEffect.ApplyTo(webView);
-            webView.Source = new HtmlWebViewSource
+            webView.Source = new HtmlWebViewSource { Html = "<h1>Loading...</h1>" };
+            parseMockData();
+        }
+
+        async void parseMockData()
+        {
+            List<CartItem> cartItems = new List<CartItem>();
+            for (int i = 0; i < 6; i++) cartItems.Add(new CartItem
             {
-                Html = Properties.Resources.template1
-            };
+                title = $"Item {i}",
+                hsnCode = 1244,
+                rate = 1200,
+                quantity = 12.55,
+                per = "Brass"
+            });
+
+            await Task.Run(() => {
+                webView.Source = new HtmlWebViewSource
+                {
+                    Html = cartItems.EnterCartItems(Properties.Resources.template1)
+                };
+            });
         }
 
         async void ShareButton_Clicked(object sender, EventArgs e)
