@@ -1,4 +1,5 @@
-﻿using GstBillGenerator.Constants;
+﻿using Forms9Patch;
+using GstBillGenerator.Constants;
 using GstBillGenerator.Models;
 using GSTBillGenerator.Models;
 using System.Collections.Generic;
@@ -45,7 +46,7 @@ namespace GstBillGenerator.Services
             return htmlToParse;
         }
 
-        public static string EnterCartItems(this List<CartItem> cartItems, string htmlToParse)
+        public static string EnterCartItems(this List<CartItem> cartItems, BillInfo billInfo, string htmlToParse)
         {
             // strings to replace
             string srNos = "";
@@ -81,6 +82,12 @@ namespace GstBillGenerator.Services
             htmlToParse = htmlToParse.Replace(TemplateContentTags.PerColumn, per);
             htmlToParse = htmlToParse.Replace(TemplateContentTags.AmountsColumn, amount);
             htmlToParse = htmlToParse.Replace(TemplateContentTags.Total, string.Format("{0:N2}/-", amountTotal));
+
+            double totalTax = (billInfo.cGstPercentage + billInfo.sGstPercentage) / 100 * amountTotal;
+
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.CGSTValue, string.Format("{0:N2}/-", billInfo.cGstPercentage / 100 * amountTotal));
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.SGSTValue, string.Format("{0:N2}/-", billInfo.sGstPercentage / 100 * amountTotal));
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.GrandTotalValue, string.Format("{0:N2}/-", amountTotal + totalTax));
 
             return htmlToParse;
         }
