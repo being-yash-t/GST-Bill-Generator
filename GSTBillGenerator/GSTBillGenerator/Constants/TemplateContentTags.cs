@@ -39,6 +39,7 @@
         public const string SGSTValue = "{SGST_VALUE}";
         public const string RoundUpValue = "{ROUNDUP_VALUE}";
         public const string GrandTotalValue = "{GRAND_TOTAL_VALUE}";
+        public const string GrandTotalInWords = "{GRAND_TOTAL_IN_WORDS}";
 
         // Other
         public const string CityName = "{CITY_NAME}";
