@@ -37,6 +37,16 @@ namespace GstBillGenerator.Pages
 
             await Task.Run(() => {
                 string htmlSource = cartItems.EnterCartItems(Properties.Resources.template1);
+                BillInfo billInfo = new BillInfo
+                {
+                    cityName = "Mumbai",
+                    cGstPercentage = 2.5,
+                    sGstPercentage = 2.5,
+                    billDate = DateTime.Now,
+                    billNo = 32
+                };
+                htmlSource = billInfo.EnterBillInfo(htmlSource);
+
                 htmlSource = ModelToHtmlHelpers.EnterFirmBayerInfo(
                     new FirmInfo 
                     {

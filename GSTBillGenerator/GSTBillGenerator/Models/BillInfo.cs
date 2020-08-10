@@ -4,16 +4,14 @@ namespace GSTBillGenerator.Models
 {
     class BillInfo
     {
-        string billInfo { get; set; }
+        public int billNo { get; set; }
 
-        DateTime billDate { get; set; }
+        public DateTime billDate { get; set; }
 
-        double cGstPercentage { get; set; }
+        public double cGstPercentage { get; set; }
 
-        double sGstPercentage { get; set; }
+        public double sGstPercentage { get; set; }
 
-        string bottomText { get; set; }
-
-        string cityName { get; set; }
+        public string cityName { get; set; }
     }
 }

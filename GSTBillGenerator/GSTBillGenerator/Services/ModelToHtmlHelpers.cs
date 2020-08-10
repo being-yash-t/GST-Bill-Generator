@@ -7,6 +7,15 @@ namespace GstBillGenerator.Services
 {
     static class ModelToHtmlHelpers
     {
+        public static string EnterBillInfo(this BillInfo billInfo, string htmlToParse)
+        {
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.InvoiceNo, billInfo.billNo.ToString());
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.InvoiceDate, billInfo.billDate.ToLocalTime().ToString("dd / MM / yyyy"));
+            htmlToParse = htmlToParse.Replace(TemplateContentTags.CityName, billInfo.cityName);
+
+            return htmlToParse;
+        }
+
         public static string EnterBankDetails(this BankDetails bankDetails, string htmlToParse)
         {
             htmlToParse = htmlToParse.Replace(TemplateContentTags.BankOwnerName, bankDetails.accountName);
