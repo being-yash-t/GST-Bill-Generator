@@ -74,16 +74,12 @@
                                     <table style="border:1px solid #999999;" width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tbody>
                                             <tr>
-                                                <td width="25%" height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice No</span></strong></td>
-                                                <td width="25%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">{INVOICE_NO}</span></td>
-                                                <td width="25%"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Delivery Challan No: </span></strong></td>
-                                                <td width="25%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">As per ledger attached</span></td>
+                                                <td width="24%" height="25"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;"><strong>Invoice No: </strong>{INVOICE_NO}</span> </td>
+                                                <td width="25%"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;"><strong>Delivery Challan No: </strong>As per ledger attached</span> </td>
                                             </tr>
                                             <tr>
-                                                <td height="25"><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Invoice Date</span></strong></td>
-                                                <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">{INVOICE_DATE}</span></td>
-                                                <td><strong><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">Date of Delivery Challan: </span></strong></td>
-                                                <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">As per ledger attached</span></td>
+                                                <td height="25"><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;"><strong>Invoice Date: </strong>{INVOICE_DATE}</span> </td>
+                                                <td><span style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;"><strong>Date of Delivery Challan: </strong>As per ledger attached</span> </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -96,15 +92,15 @@
                                 <td>
                                     <!--items table-->
                                     <!--######## check table height (Hard coded)-->
-                                    <table style="border:1px solid #999999; height: 9cm;" width="100%" border="1" cellpadding="0" cellspacing="0" class="tb2">
+                                    <table style="border:1px solid #999999; height: 14.2cm;" width="100%" border="1" cellpadding="0" cellspacing="0" class="tb2">
                                         <tbody>
                                             <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif;">
                                                 <td width="6%" height="30" align="center"><strong>SR. NO.</strong></td>
-                                                <td width="48%" align="center"><strong>Particulars</strong></td>
+                                                <td width="44%" align="center"><strong>Particulars</strong></td>
                                                 <td width="10%" align="center"><strong>HSN Code</strong></td>
                                                 <td width="8%" align="center"><strong>QTY</strong></td>
                                                 <td width="8%" align="center"><strong>Rate</strong></td>
-                                                <td width="6%" align="center"><strong>Per</strong></td>
+                                                <td width="10%" align="center"><strong>Per</strong></td>
                                                 <td width="18%" align="center"><strong>Amount</strong></td>
                                             </tr>
                                             <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; height: 70%; vertical-align: top;">
@@ -147,19 +143,8 @@
                                                 <!--Total-->
                                                 <td align="center ">{TOTAL_AMOUNT}</td>
                                             </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table width="100% " border="1 " cellpadding="0 " cellspacing="0 " class="tb2 ">
-                                        <tbody>
                                             <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
-                                                <td width="60% " colspan="2" style="padding: 5px; border-bottom: transparent;">
+                                                <td width="60% " colspan="4" style="padding: 5px; border-bottom: transparent;">
                                                     <!--Bank Info -->
                                                     <table width="100%" border="0">
                                                         <tbody>
@@ -177,7 +162,7 @@
                                                         </tbody>
                                                     </table>
                                                 </td>
-                                                <td align="center">
+                                                <td align="center" colspan="2">
                                                     <ul>
                                                         <li>Add CGST</li>
                                                         <li>Add SGST</li>
@@ -194,13 +179,13 @@
                                                 </td>
                                             </tr>
                                             <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
-                                                <td colspan="2" style=" font-size:13px; color:#000; padding:8px; font-family: 'Muli', sans-serif; border-top: transparent;"><strong>IFSC Code: </strong>{IFSC_CODE}</td>
-                                                <td align="center "><strong>Grand Total</strong></td>
+                                                <td colspan="4" style=" font-size:13px; color:#000; padding:8px; font-family: 'Muli', sans-serif; border-top: transparent;"><strong>IFSC Code: </strong>{IFSC_CODE}</td>
+                                                <td align="center " colspan="2"><strong>Grand Total</strong></td>
                                                 <!--Grand Total-->
                                                 <td align="center ">{GRAND_TOTAL_VALUE}</td>
                                             </tr>
-                                            <tr style=" font-size:13px; color:#000; padding:5px; font-family: 'Muli', sans-serif; ">
-                                                <td colspan="4" style=" font-size:13px; color:#000; padding:8px; font-family: 'Muli', sans-serif; "> <strong>Amount in words: </strong>{GRAND_TOTAL_IN_WORDS} </td>
+                                            <tr>
+                                                <td colspan="8" style=" font-size:13px; color:#000; padding:8px; font-family: 'Muli', sans-serif; "> <strong>Amount in words: </strong>{GRAND_TOTAL_IN_WORDS} </td>
                                             </tr>
                                         </tbody>
                                     </table>
