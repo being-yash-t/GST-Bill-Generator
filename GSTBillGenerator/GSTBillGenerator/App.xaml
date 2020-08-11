@@ -6,11 +6,12 @@
              mc:Ignorable="d"
              x:Class="GstBillGenerator.App">
     <Application.Resources>
-
+        
         <ResourceDictionary>
 
-            <Color x:Key="DarkColor">#3BACFF</Color>
-            <Color x:Key="LightColor">#E3F2FD</Color>
+            <Color x:Key="DarkColor">#b39ddb</Color>
+            <Color x:Key="LightColor">#ede7f6</Color>
+            
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="Visual" Value="Material"/>

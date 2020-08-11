@@ -11,23 +11,23 @@
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#E3F2FD</item>
+    <item name="colorPrimary">#ede7f6</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#3BACFF</item>
+    <item name="colorPrimaryDark">#b39ddb</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">#3BACFF</item>
+    <item name="colorAccent">#b39ddb</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
 
-    <item name="android:textAllCaps">false</item>
+    <item name="android:statusBarColor">#ede7f6</item>
     <item name="android:windowLightStatusBar">true</item>
-    <item name="android:statusBarColor">#E3F2FD</item>
+    <item name="android:textAllCaps">false</item>
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#3BACFF</item>
+    <item name="colorAccent">#b39ddb</item>
   </style>
 </resources>

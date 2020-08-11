@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\HomeContentPage.xaml.cs">
+      <DependentUpon>HomeContentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\HomeShell.xaml.cs">
       <DependentUpon>HomeShell.xaml</DependentUpon>
     </Compile>

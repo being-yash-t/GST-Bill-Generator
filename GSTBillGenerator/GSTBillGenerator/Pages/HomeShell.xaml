@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GstBillGenerator.Pages.HomeShell"
-             xmlns:local="clr-namespace:GstBillGenerator.Pages">
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="GstBillGenerator.Pages.HomeShell"
+       xmlns:local="clr-namespace:GstBillGenerator.Pages">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="{StaticResource LightColor}" />
+            <Setter Property="Shell.ForegroundColor" Value="Black" />
+            <Setter Property="Shell.TitleColor" Value="Black" />
+        </Style>
+        <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}" />
+    </Shell.Resources>
 
     <Shell.FlyoutHeader>
         <StackLayout HeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
@@ -11,33 +21,43 @@
     </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Home">
-        <ShellContent>
-            <local:HomeContentPage/>
-        </ShellContent>
+        <Tab>
+            <ShellContent>
+                <local:HomeContentPage/>
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Firm Details">
-        <ShellContent>
-            <local:FirmDetailsList/>
-        </ShellContent>
+        <Tab>
+            <ShellContent>
+                <local:FirmDetailsList/>
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Bayers List">
-        <ShellContent>
-            <local:BayerListPage/>
-        </ShellContent>
+        <Tab>
+            <ShellContent>
+                <local:BayerListPage/>
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Bank Details">
-        <ShellContent>
-            <local:BankDetailsList/>
-        </ShellContent>
+        <Tab>
+            <ShellContent>
+                <local:BankDetailsList/>
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Old Bills">
-        <ShellContent>
-            <local:OldBills/>
-        </ShellContent>
+        <Tab>
+            <ShellContent>
+                <local:OldBills/>
+            </ShellContent>
+        </Tab>
     </FlyoutItem>
 
 </Shell>

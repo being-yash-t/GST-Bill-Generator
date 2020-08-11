@@ -4,10 +4,13 @@
              x:Class="GstBillGenerator.Pages.HomeContentPage"
              Title="Home">
     <ContentPage.Content>
-        <StackLayout>
+
+        <StackLayout Padding="10">
+            <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>
             <Label Text="Welcome to HomePage!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
+   
 </ContentPage>
