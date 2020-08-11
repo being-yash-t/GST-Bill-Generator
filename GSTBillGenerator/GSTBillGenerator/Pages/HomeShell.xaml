@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GstBillGenerator.Pages.HomeShell"
+             xmlns:local="clr-namespace:GstBillGenerator.Pages">
+
+    <Shell.FlyoutHeader>
+        <StackLayout HeightRequest="120" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+            <Label Text="GST Bill Generator" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Home">
+        <ShellContent>
+            <local:HomeContentPage/>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Firm Details">
+        <ShellContent>
+            <local:FirmDetailsList/>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Bayers List">
+        <ShellContent>
+            <local:BayerListPage/>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Bank Details">
+        <ShellContent>
+            <local:BankDetailsList/>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Old Bills">
+        <ShellContent>
+            <local:OldBills/>
+        </ShellContent>
+    </FlyoutItem>
+
+</Shell>

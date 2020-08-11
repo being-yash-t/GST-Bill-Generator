@@ -9,7 +9,7 @@ namespace GstBillGenerator
         {
             InitializeComponent();
 
-            MainPage = new GenerateBillPage();
+            MainPage = new HomeShell();
         }
 
         protected override void OnStart()

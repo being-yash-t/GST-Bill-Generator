@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <PackageReference Include="Forms9Patch" Version="2.4.2" />
+    <PackageReference Include="ReactiveUI" Version="11.5.17" />
+    <PackageReference Include="ReactiveUI.XamForms" Version="11.5.17" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
@@ -19,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\HomeShell.xaml.cs">
+      <DependentUpon>HomeShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\FirmDetailsList.xaml.cs">
+      <DependentUpon>FirmDetailsList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -27,7 +35,25 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Pages\BankDetailsList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BayerListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\GenerateBillPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\HomeContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\HomeShell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\OldBills.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\FirmDetailsList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
