@@ -1,7 +1,13 @@
-﻿namespace GstBillGenerator.Models
+﻿using SQLite;
+
+namespace GstBillGenerator.Models
 {
-    class CartItem
+    public class CartItem
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+
+
         public string title { get; set; }
 
         public int hsnCode { get; set; }

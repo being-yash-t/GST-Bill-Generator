@@ -1,9 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 
 namespace GSTBillGenerator.Models
 {
-    class BillInfo
+    public class BillInfo
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+
         public int billNo { get; set; }
 
         public DateTime billDate { get; set; }

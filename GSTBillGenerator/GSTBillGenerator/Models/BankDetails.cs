@@ -1,7 +1,12 @@
-﻿namespace GSTBillGenerator.Models
+﻿using SQLite;
+
+namespace GSTBillGenerator.Models
 {
-    class BankDetails
+    public class BankDetails
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+
         public string accountName { get; set; }
 
         public string bankName { get; set; }

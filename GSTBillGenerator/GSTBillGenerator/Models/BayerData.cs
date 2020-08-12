@@ -1,7 +1,11 @@
-﻿namespace GSTBillGenerator.Models
+﻿using SQLite;
+
+namespace GSTBillGenerator.Models
 {
-    class BayerData
+    public class BayerData
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
 
         public string bayerName { get; set; }
 

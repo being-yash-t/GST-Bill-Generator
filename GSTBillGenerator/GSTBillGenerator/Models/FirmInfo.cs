@@ -1,7 +1,12 @@
-﻿namespace GSTBillGenerator.Models
+﻿using SQLite;
+
+namespace GSTBillGenerator.Models
 {
     public class FirmInfo
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+
         public string firmName { get; set; }
 
         public string address { get; set; }
