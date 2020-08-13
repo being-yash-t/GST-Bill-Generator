@@ -2,16 +2,15 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        x:Class="GstBillGenerator.Pages.HomeShell"
-       xmlns:local="clr-namespace:GstBillGenerator.Pages">
+       xmlns:local="clr-namespace:GstBillGenerator.Pages" >
 
     <Shell.Resources>
-        <Style x:Key="BaseStyle"
-               TargetType="Element">
+        <Style x:Key="BaseStyle" TargetType="Element">
             <Setter Property="Shell.BackgroundColor" Value="{StaticResource LightColor}" />
             <Setter Property="Shell.ForegroundColor" Value="Black" />
             <Setter Property="Shell.TitleColor" Value="Black" />
         </Style>
-        <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}" />
+        <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}"/>
     </Shell.Resources>
 
     <Shell.FlyoutHeader>
@@ -20,44 +19,12 @@
         </StackLayout>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Home">
-        <Tab>
-            <ShellContent>
-                <local:HomeContentPage/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomeContentPage}" />
+    <ShellContent Title="Firm Details" ContentTemplate="{DataTemplate local:FirmDetailsList}" />
+    <ShellContent Title="Bayers List" ContentTemplate="{DataTemplate local:BayerListPage}" />
+    <ShellContent Title="Bank Details" ContentTemplate="{DataTemplate local:BankDetailsList}" />
+    <ShellContent Title="Old Bills" ContentTemplate="{DataTemplate local:OldBills}" />
 
-    <FlyoutItem Title="Firm Details">
-        <Tab>
-            <ShellContent>
-                <local:FirmDetailsList/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
-
-    <FlyoutItem Title="Bayers List">
-        <Tab>
-            <ShellContent>
-                <local:BayerListPage/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
-
-    <FlyoutItem Title="Bank Details">
-        <Tab>
-            <ShellContent>
-                <local:BankDetailsList/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
-
-    <FlyoutItem Title="Old Bills">
-        <Tab>
-            <ShellContent>
-                <local:OldBills/>
-            </ShellContent>
-        </Tab>
-    </FlyoutItem>
+    <MenuItem Text="About" Clicked="OpenAboutButton"/>
 
 </Shell>

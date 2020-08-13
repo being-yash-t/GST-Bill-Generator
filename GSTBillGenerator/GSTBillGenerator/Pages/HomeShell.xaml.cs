@@ -9,6 +9,14 @@ namespace GstBillGenerator.Pages
         public HomeShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute("aboutPage", typeof(AboutPage));
+        }
+
+        private void OpenAboutButton(object sender, System.EventArgs e)
+        {
+            Shell.Current.Navigation.PushAsync(new AboutPage());
+            //Shell.Current.GoToAsync($"{Shell.Current.CurrentState.Location}/aboutPage");
+            Shell.Current.FlyoutIsPresented = false;
         }
     }
 }
