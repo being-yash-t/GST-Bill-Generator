@@ -11,8 +11,6 @@ namespace GSTBillGenerator.Models
 
         public string address { get; set; }
 
-        public int pinCode { get; set; }
-
         public string phoneNo { get; set; }
 
         public string GstTin { get; set; }

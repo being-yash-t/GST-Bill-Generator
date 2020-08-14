@@ -1,12 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GstBillGenerator.Pages.OldBills">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Old Bills!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="GstBillGenerator.Pages.OldBills"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             Title="Old Bills">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Create"/>
+    </ContentPage.ToolbarItems>
+
+    <RefreshView IsRefreshing="False">
+        <CollectionView x:Name="MyListView">
+            <CollectionView.EmptyView>
+                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="No Items Here" FontSize="Medium"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"></Span>
+                            <Span Text="Click the + button to create one" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}" Margin="16"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
 </ContentPage>

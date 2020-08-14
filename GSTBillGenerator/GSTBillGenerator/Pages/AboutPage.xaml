@@ -2,12 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GstBillGenerator.Pages.AboutPage"
-             Shell.FlyoutBehavior="Disabled">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to About Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             Shell.FlyoutBehavior="Disabled" Shell.NavBarHasShadow="False" 
+             Title="About">
+    
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackLayout BackgroundColor="{StaticResource LightColor}" 
+                         VerticalOptions="FillAndExpand" 
+                         HorizontalOptions="Fill" HeightRequest="150">
+                <!--Image-->
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout Orientation="Vertical" 
+                             Padding="16"
+                             Spacing="10">
+                    <Label FontSize="22" Text="GST Bill Generator" />
+                    <Label Text="This app is not related to the government or income tax department in any way. It just a small personal project" />
+                    <Button Margin="0,10,0,0"
+                            Text="Github Page" 
+                            Command="{Binding TapCommand}"
+                            CommandParameter="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/"
+                            BackgroundColor="{StaticResource DarkColor}"
+                            TextColor="White" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ScrollView>
 </ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GstBillGenerator.ListViewItems.FirmListItem"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             mc:Ignorable="d"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design">
+    <Frame>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{Binding firmName}" FontAttributes="Bold" />
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                    <Span Text="{Binding address}" />
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                    <Span Text="GSTIN: " FontAttributes="Bold"/>
+                    <Span Text="{Binding GstTin}" />
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                    <Span Text="{Binding phoneNo}"/>
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                    <Span Text="{Binding stateName}"/>
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                    <Span Text="{Binding email}"/>
+                    <Span Text="{Static system:Environment.NewLine}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </Frame>
+</ContentView>
