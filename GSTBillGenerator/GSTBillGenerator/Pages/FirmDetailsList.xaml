@@ -6,7 +6,7 @@
              Title="Firm Details">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Create"/>
+        <ToolbarItem Text="Create" Clicked="CreateClicked"/>
     </ContentPage.ToolbarItems>
     
     <RefreshView IsRefreshing="False">

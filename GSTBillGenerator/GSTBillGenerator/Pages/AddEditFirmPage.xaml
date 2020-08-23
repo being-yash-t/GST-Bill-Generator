@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GstBillGenerator.Pages.AddEditFirmPage">
+    <ScrollView>
+        <StackLayout Orientation="Vertical" Margin="8" Spacing="8">
+            <Entry Placeholder="Firm Name" MaxLength="10" />
+            
+            <Entry Placeholder="Physical Address" MaxLength="40" 
+                   Keyboard="Text"/>
+            
+            <Entry Placeholder="Phone no" MaxLength="10"
+                   Keyboard="Numeric"/>
+            
+            <Entry Placeholder="GSTIN" TextTransform="Uppercase"
+                   MaxLength="15"/>
+            
+            <Entry Placeholder="State" MaxLength="18"/>
+            
+            <Entry Placeholder="Email Address" Keyboard="Email" />
+
+            <Button Text="Save" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
