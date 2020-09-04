@@ -205,6 +205,8 @@ dependencies {
     // Manual Linking
     compile project(':react-native-html-to-pdf')
     implementation project(':react-native-share')
+    implementation project(':react-native-sqlite-storage')
+
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
