@@ -8,12 +8,10 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "android-release": "react-native run-android -variant=release"
+    "android-release": "react-native run-android -variant=release",
+    "android-man": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.10",
-    "@react-navigation/native": "^5.7.3",
-    "@react-navigation/stack": "^5.9.0",
     "@types/react-native-html-to-pdf": "^0.8.0",
     "@types/react-native-share": "^3.3.0",
     "@types/react-native-sqlite-storage": "^5.0.0",
@@ -21,9 +19,8 @@
     "react-native": "0.63.2",
     "react-native-gesture-handler": "^1.7.0",
     "react-native-html-to-pdf": "^0.8.0",
+    "react-native-navigation": "^6.12.2",
     "react-native-reanimated": "^1.13.0",
-    "react-native-safe-area-context": "^3.1.7",
-    "react-native-screens": "^2.10.1",
     "react-native-share": "^3.7.0",
     "react-native-sqlite-storage": "^5.0.0"
   },
