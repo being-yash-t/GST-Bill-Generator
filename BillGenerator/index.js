@@ -21,7 +21,7 @@ Navigation.events().registerAppLaunchedListener(async () => {
   Navigation.setDefaultOptions({
     statusBar: {style: 'dark', backgroundColor: 'white'},
     layout: {backgroundColor: 'white'},
-    topBar: {title: {alignment: 'center'}, animate: false},
+    topBar: {title: {alignment: 'center'}, animate: true},
   });
   Navigation.setRoot({
     root: {
