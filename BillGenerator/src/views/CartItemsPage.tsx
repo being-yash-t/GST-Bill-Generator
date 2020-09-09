@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const SettingsPage: NavigationFunctionComponent = (props) => {
+const CartItemsPage: NavigationFunctionComponent = ({componentId}) => {
   return (
     <View
       style={{
@@ -11,17 +11,17 @@ const SettingsPage: NavigationFunctionComponent = (props) => {
         flexDirection: 'column',
         flex: 1,
       }}>
-      <Text>Settings Page</Text>
+      <Text>Cart Items</Text>
     </View>
   );
 };
 
-SettingsPage.options = {
+CartItemsPage.options = {
   topBar: {
     title: {
-      text: 'Settings',
+      text: 'Cart Items',
     },
   },
 };
 
-export default SettingsPage;
+export default CartItemsPage;

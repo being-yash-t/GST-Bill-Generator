@@ -2,7 +2,7 @@ import * as React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const SettingsPage: NavigationFunctionComponent = (props) => {
+const OldBillsPage: NavigationFunctionComponent = ({componentId}) => {
   return (
     <View
       style={{
@@ -11,17 +11,17 @@ const SettingsPage: NavigationFunctionComponent = (props) => {
         flexDirection: 'column',
         flex: 1,
       }}>
-      <Text>Settings Page</Text>
+      <Text>Old Bills</Text>
     </View>
   );
 };
 
-SettingsPage.options = {
+OldBillsPage.options = {
   topBar: {
     title: {
-      text: 'Settings',
+      text: 'Old Bills',
     },
   },
 };
 
-export default SettingsPage;
+export default OldBillsPage;
