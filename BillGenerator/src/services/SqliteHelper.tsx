@@ -1,9 +1,12 @@
-import Sqlite from 'react-native-sqlite-storage';
+import Sqlite, {SQLiteDatabase} from 'react-native-sqlite-storage';
+import {FirmData} from '../models/DataModels';
+
+let db: SQLiteDatabase | null = null;
 
 export function initDb(): void {
   // TODO: remove debug in release build
   Sqlite.DEBUG(true);
-  const db = Sqlite.openDatabase(
+  db = Sqlite.openDatabase(
     {name: 'main.db', location: 'default'},
     () => {},
     (error: Sqlite.SQLError) => {
@@ -80,9 +83,11 @@ export function initDb(): void {
             ');',
         );
       },
-      (err) => {
-        console.log('Failed init transaction');
-      },
+      (err) => console.log('Failed init transaction'),
       () => console.log('Database init successful'),
     );
+}
+
+export async function saveFirmData(firmData: FirmData): Promise<Error | null> {
+  return null;
 }

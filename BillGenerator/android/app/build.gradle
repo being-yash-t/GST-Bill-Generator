@@ -206,6 +206,7 @@ dependencies {
     compile project(':react-native-html-to-pdf')
     implementation project(':react-native-share')
     implementation project(':react-native-sqlite-storage')
+    compile project(':react-native-vector-icons')
 
 
     if (enableHermes) {

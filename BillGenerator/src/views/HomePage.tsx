@@ -10,9 +10,8 @@ import {
   ImageSourcePropType,
 } from 'react-native';
 import {RectButton, ScrollView, Switch} from 'react-native-gesture-handler';
+import {ThemeContext} from '../../App';
 import {HomePageProp} from '../../AppNavigation';
-
-const styles = StyleSheet.create({});
 
 const screenDimentions = Dimensions.get('window');
 const cardSize = screenDimentions.width / 3;
@@ -61,10 +60,10 @@ const HomeButton: React.FC<{
 };
 
 const Homepage: React.FC<HomePageProp> = ({navigation}) => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const {isDark, toggle} = React.useContext(ThemeContext);
+  const fontColor = isDark ? 'white' : 'black';
   return (
     <>
-      <StatusBar barStyle="dark-content" />
       <View
         style={{
           flexDirection: 'row',
@@ -72,15 +71,17 @@ const Homepage: React.FC<HomePageProp> = ({navigation}) => {
         }}>
         <View style={{borderRadius: 12, overflow: 'hidden'}}>
           <RectButton onPress={() => navigation.navigate('SettingsPage')}>
-            <Text style={{fontFamily: 'Montserrat-Bold', margin: 16}}>
+            <Text
+              style={{
+                fontFamily: 'Montserrat-Bold',
+                margin: 16,
+                color: fontColor,
+              }}>
               Settings
             </Text>
           </RectButton>
         </View>
-        <Switch
-          value={darkMode}
-          onValueChange={(value) => setDarkMode(value)}
-        />
+        <Switch value={isDark} onValueChange={toggle} />
       </View>
 
       <ScrollView>
