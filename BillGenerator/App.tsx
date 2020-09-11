@@ -9,7 +9,10 @@ import BankDetailsPage from './src/views/BankDetailsPage';
 import CartItemsPage from './src/views/CartItemsPage';
 import OldBillsPage from './src/views/OldBillPage';
 import BayersPage from './src/views/BayersPage';
-import {TransitionPresets} from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  TransitionPresets,
+} from '@react-navigation/stack';
 
 const App = () => {
   return (
@@ -31,7 +34,10 @@ const App = () => {
           options={{
             title: 'GST Bill Generator',
             headerTitleAlign: 'left',
-            headerTitleStyle: {fontSize: 36, fontFamily: 'Montserrat-Bold'},
+            headerTitleStyle: {
+              fontSize: 36,
+              fontFamily: 'Montserrat-Bold',
+            },
             headerStatusBarHeight: 40,
           }}
         />
