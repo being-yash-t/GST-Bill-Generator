@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const OldBillsPage: NavigationFunctionComponent = ({componentId}) => {
+const OldBillsPage: React.FC = () => {
   return (
     <View
       style={{
@@ -14,14 +13,6 @@ const OldBillsPage: NavigationFunctionComponent = ({componentId}) => {
       <Text>Old Bills</Text>
     </View>
   );
-};
-
-OldBillsPage.options = {
-  topBar: {
-    title: {
-      text: 'Old Bills',
-    },
-  },
 };
 
 export default OldBillsPage;

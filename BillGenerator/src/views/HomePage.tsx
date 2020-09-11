@@ -5,9 +5,10 @@ import {
   StyleSheet,
   OpaqueColorValue,
   Dimensions,
+  StatusBar,
 } from 'react-native';
-import {NavigationFunctionComponent, Navigation} from 'react-native-navigation';
 import {RectButton, ScrollView, Switch} from 'react-native-gesture-handler';
+import {HomePageProp} from '../../AppNavigation';
 
 const styles = StyleSheet.create({});
 
@@ -46,55 +47,42 @@ const HomeButton: React.FC<{
   );
 };
 
-const Homepage: NavigationFunctionComponent = ({componentId}) => {
+const Homepage: React.FC<HomePageProp> = ({navigation}) => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   return (
     <>
-      <ScrollView>
-        <View
-          style={{
-            height: cardSize * 1.3,
-            justifyContent: 'center',
-            margin: 16,
-          }}>
-          <Text
-            style={{
-              fontSize: 36,
-              fontFamily: 'Montserrat-Bold',
-            }}>
-            GST Bill Generator
-          </Text>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{borderRadius: 12, overflow: 'hidden'}}>
-              <RectButton
-                onPress={() => openPageById(componentId, 'SettingsPage')}>
-                <Text style={{fontFamily: 'Montserrat-Bold', margin: 16}}>
-                  Settings
-                </Text>
-              </RectButton>
-            </View>
-            <Switch
-              value={darkMode}
-              onValueChange={(value) => setDarkMode(value)}
-            />
-          </View>
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
+      <View style={{flexDirection: 'row'}}>
+        <View style={{borderRadius: 12, overflow: 'hidden'}}>
+          <RectButton onPress={() => navigation.navigate('SettingsPage')}>
+            <Text style={{fontFamily: 'Montserrat-Bold', margin: 16}}>
+              Settings
+            </Text>
+          </RectButton>
         </View>
+        <Switch
+          value={darkMode}
+          onValueChange={(value) => setDarkMode(value)}
+        />
+      </View>
+
+      <ScrollView>
         <View style={{flexDirection: 'row', margin: 36}}>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
             <HomeButton
               text="New Bill"
               backgroundColor="#bfe1ff"
-              onPress={() => openPageById(componentId, 'NewBillPage')}
+              onPress={() => navigation.navigate('NewBillPage')}
             />
             <HomeButton
               text="Firm Details"
               backgroundColor="#bfffd1"
-              onPress={() => openPageById(componentId, 'FirmDetailsPage')}
+              onPress={() => navigation.navigate('FirmDetailsPage')}
             />
             <HomeButton
               text="Bayers"
               backgroundColor="#ffdfbd"
-              onPress={() => openPageById(componentId, 'BayersPage')}
+              onPress={() => navigation.navigate('BayersPage')}
             />
           </View>
           <View style={{flex: 1, alignItems: 'flex-start'}}>
@@ -103,38 +91,24 @@ const Homepage: NavigationFunctionComponent = ({componentId}) => {
             <HomeButton
               text="Bank Details"
               backgroundColor="#f4ffbf"
-              onPress={() => openPageById(componentId, 'BankDetailsPage')}
+              onPress={() => navigation.navigate('BankDetailsPage')}
             />
             <HomeButton
               text="Old Bills"
               backgroundColor="#f9bfff"
-              onPress={() => openPageById(componentId, 'OldBillsPage')}
+              onPress={() => navigation.navigate('OldBillsPage')}
             />
             <HomeButton
               text="Cart Items"
               backgroundColor="#ffbfd2"
-              onPress={() => openPageById(componentId, 'CartItemsPage')}
+              onPress={() => navigation.navigate('CartItemsPage')}
             />
-            {/* <HomeButton text="" backgroundColor="blue" onPress={() => {}} /> */}
+            {/* <HomeButton text="" backgroundColor="blue" onPress={() => navigation.navigate('SettingsPage')} /> */}
           </View>
         </View>
       </ScrollView>
     </>
   );
 };
-
-Homepage.options = {
-  topBar: {
-    visible: false,
-  },
-};
-
-function openPageById(componentId: string, pageId: string) {
-  Navigation.push(componentId, {
-    component: {
-      name: pageId,
-    },
-  });
-}
 
 export default Homepage;

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const CartItemsPage: NavigationFunctionComponent = ({componentId}) => {
+const CartItemsPage: React.FC = () => {
   return (
     <View
       style={{
@@ -14,14 +13,6 @@ const CartItemsPage: NavigationFunctionComponent = ({componentId}) => {
       <Text>Cart Items</Text>
     </View>
   );
-};
-
-CartItemsPage.options = {
-  topBar: {
-    title: {
-      text: 'Cart Items',
-    },
-  },
 };
 
 export default CartItemsPage;

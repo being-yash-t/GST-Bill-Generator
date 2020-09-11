@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const BankDetailsPage: NavigationFunctionComponent = ({componentId}) => {
+const BankDetailsPage: React.FC = () => {
   return (
     <View
       style={{
@@ -14,14 +13,6 @@ const BankDetailsPage: NavigationFunctionComponent = ({componentId}) => {
       <Text>Bank Details</Text>
     </View>
   );
-};
-
-BankDetailsPage.options = {
-  topBar: {
-    title: {
-      text: 'Bank Details',
-    },
-  },
 };
 
 export default BankDetailsPage;

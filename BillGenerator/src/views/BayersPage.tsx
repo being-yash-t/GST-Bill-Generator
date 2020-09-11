@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const BayersPage: NavigationFunctionComponent = ({componentId}) => {
+const BayersPage: React.FC = () => {
   return (
     <View
       style={{
@@ -14,14 +13,6 @@ const BayersPage: NavigationFunctionComponent = ({componentId}) => {
       <Text>Bayers Page</Text>
     </View>
   );
-};
-
-BayersPage.options = {
-  topBar: {
-    title: {
-      text: 'Bayers',
-    },
-  },
 };
 
 export default BayersPage;

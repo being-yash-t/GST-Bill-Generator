@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {View, Text} from 'react-native';
-import {NavigationFunctionComponent} from 'react-native-navigation';
 
-const SettingsPage: NavigationFunctionComponent = (props) => {
+const SettingsPage: React.FC = () => {
   return (
     <View
       style={{
@@ -14,14 +13,6 @@ const SettingsPage: NavigationFunctionComponent = (props) => {
       <Text>Settings Page</Text>
     </View>
   );
-};
-
-SettingsPage.options = {
-  topBar: {
-    title: {
-      text: 'Settings',
-    },
-  },
 };
 
 export default SettingsPage;
