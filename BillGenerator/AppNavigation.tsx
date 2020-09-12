@@ -30,7 +30,7 @@ type FirmDetailsPageProp = {
 };
 
 type FirmDataFormProp = {
-  igation: StackNavigationProp<RootStackParamList, 'FirmDataForm'>;
+  navigation: StackNavigationProp<RootStackParamList, 'FirmDataForm'>;
   route: RouteProp<RootStackParamList, 'FirmDataForm'>;
 };
 

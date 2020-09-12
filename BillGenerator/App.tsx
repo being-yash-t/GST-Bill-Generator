@@ -44,17 +44,21 @@ const App = () => {
     <ThemeContext.Provider value={{isDark: isDarkTheme, toggle: toggleTheme}}>
       <StatusBar
         barStyle={isDarkTheme ? 'light-content' : 'dark-content'}
-        backgroundColor={isDarkTheme ? 'black' : 'white'}
+        backgroundColor={theme.colors.card}
       />
       <PaperProvider
         theme={{
           ...ptheme,
-          roundness: 16,
+          roundness: 10,
+          fonts: {
+            ...ptheme.fonts,
+            regular: {fontFamily: 'Montserrat-Regular'},
+            medium: {fontFamily: 'Montserrat-Bold'},
+          },
           colors: {
             ...ptheme.colors,
-            // TODO
-            // primary: '#3498db',
-            // accent: '#f1c40f',
+            primary: '#3498db',
+            accent: '#3498db',
           },
         }}>
         <NavigationContainer theme={theme}>

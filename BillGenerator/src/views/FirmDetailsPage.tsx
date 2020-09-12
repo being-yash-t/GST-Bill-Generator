@@ -1,22 +1,20 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
-import {RectButton} from 'react-native-gesture-handler';
+import {View} from 'react-native';
+import {Text, useTheme} from 'react-native-paper';
 import {FirmDetailsPageProp} from '../../AppNavigation';
+import HeaderButton from '../components/HeaderButton';
 
 const FirmDetailsPage: React.FC<FirmDetailsPageProp> = ({navigation}) => {
+  const colors = useTheme().colors;
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <RectButton
-          onPress={() => navigation.push('FirmDataForm', {data: null})}>
-          <Text
-            style={{
-              margin: 16,
-              fontFamily: 'Montserrat-Regular',
-            }}>
-            Create
-          </Text>
-        </RectButton>
+        <HeaderButton
+          onPress={() => navigation.push('FirmDataForm', {data: null})}
+          buttonText="Create"
+          textStyle={{color: colors.primary}}
+        />
       ),
     });
   }, []);
