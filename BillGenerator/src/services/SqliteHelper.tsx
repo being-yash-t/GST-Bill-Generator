@@ -111,7 +111,7 @@ export function saveFirmData(
   firmData: FirmData,
 ): Promise<[Sqlite.ResultSet]> | Error {
   if (db != null) {
-    let sqlStatement = 'INSERT INTO "FirmData"(';
+    let sqlStatement = 'REPLACE INTO "FirmData"(';
     if (firmData.id != undefined) sqlStatement += '"id",';
     sqlStatement +=
       '"firmName", "address", "phone", "gstTin", "stateText", "emailId") VALUES (';

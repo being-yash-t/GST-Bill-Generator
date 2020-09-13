@@ -45,7 +45,6 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
         initialValues={{...route.params.data}}
         validationSchema={Validation}
         onSubmit={async (values: FirmData, {}: FormikHelpers<FirmData>) => {
-          console.log(values.phone);
           const returnValue = saveFirmData(values);
           if (returnValue instanceof Error) {
             // TODO: failed
