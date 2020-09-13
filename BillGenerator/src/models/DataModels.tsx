@@ -16,7 +16,7 @@ export class FirmData {
     Id: number | undefined,
     phoneno: string,
     gsttin: string,
-    statetext: string,
+    stateText: string,
     email: string,
   ) {
     this.id = Id;
@@ -24,7 +24,7 @@ export class FirmData {
     this.address = addressText;
     this.phone = phoneno;
     this.gstTin = gsttin;
-    this.stateText = statetext;
+    this.stateText = stateText;
     this.emailId = email;
   }
 }
@@ -59,7 +59,7 @@ export class BayerData {
   bayerName: string;
   siteAddress: string;
   gstTin: string;
-  stateName: string;
+  stateText: string;
   email: string;
 
   constructor(
@@ -74,7 +74,7 @@ export class BayerData {
     this.bayerName = bayerName;
     this.siteAddress = siteAddress;
     this.gstTin = gstTin;
-    this.stateName = stateName;
+    this.stateText = stateName;
     this.email = email;
   }
 }

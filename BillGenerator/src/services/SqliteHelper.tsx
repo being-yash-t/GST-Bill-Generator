@@ -28,7 +28,7 @@ function initDatabase() {
         '"id"	INTEGER,' +
         '"firmName"	TEXT NOT NULL,' +
         '"address"	TEXT NOT NULL,' +
-        '"phoneNo"	TEXT NOT NULL,' +
+        '"phone"	TEXT NOT NULL,' +
         '"gstTin"	TEXT NOT NULL CHECK(length(gstTin)==15),' +
         '"stateText"	TEXT NOT NULL,' +
         '"emailId"	TEXT,' +
@@ -114,7 +114,7 @@ export function saveFirmData(
     let sqlStatement = 'INSERT INTO "FirmData"(';
     if (firmData.id != undefined) sqlStatement += '"id",';
     sqlStatement +=
-      '"firmName", "address", "phoneNo", "gstTin", "stateText", "emailId") VALUES (';
+      '"firmName", "address", "phone", "gstTin", "stateText", "emailId") VALUES (';
     if (firmData.id != undefined) sqlStatement += firmData.id + ', ';
     sqlStatement += '?, ?, ?, ?, ?, ?);';
     console.log(sqlStatement);
