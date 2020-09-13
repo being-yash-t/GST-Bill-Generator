@@ -9,8 +9,7 @@ import {
 } from 'react-native';
 import {Text} from 'react-native-paper';
 import {RectButton, ScrollView, Switch} from 'react-native-gesture-handler';
-import {ThemeContext} from '../../App';
-import {HomePageProp} from '../../AppNavigation';
+import {HomePageProp, ThemeContext} from '../../AppNavigation';
 import {AppColors} from '../core/Constants';
 
 const screenDimentions = Dimensions.get('window');

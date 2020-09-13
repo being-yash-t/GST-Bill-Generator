@@ -4,6 +4,7 @@ import {
 } from '@react-navigation/stack';
 import {RouteProp} from '@react-navigation/native';
 import {FirmData} from './src/models/DataModels';
+import React from 'react';
 
 const Stack = createStackNavigator();
 
@@ -16,7 +17,7 @@ type RootStackParamList = {
   BayersPage: undefined;
   BankDetailsPage: undefined;
   OldBillsPage: undefined;
-  FirmDataForm: {data: FirmData | null};
+  FirmDataForm: {data: FirmData};
 };
 
 type HomePageProp = {
@@ -36,3 +37,8 @@ type FirmDataFormProp = {
 
 export {Stack};
 export type {HomePageProp, FirmDataFormProp, FirmDetailsPageProp};
+
+export const ThemeContext = React.createContext<{
+  isDark: boolean;
+  toggle: (newValue: boolean) => void;
+}>({isDark: false, toggle: (a) => {}});

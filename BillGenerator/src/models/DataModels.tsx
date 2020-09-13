@@ -1,5 +1,8 @@
 export class FirmData {
-  id: number;
+  static blank(): FirmData {
+    return new FirmData('', '', undefined, '', '', '', '');
+  }
+  id: number | undefined;
   firmName: string;
   address: string;
   phone: string;
@@ -10,7 +13,7 @@ export class FirmData {
   constructor(
     fName: string,
     addressText: string,
-    Id: number,
+    Id: number | undefined,
     phoneno: string,
     gsttin: string,
     statetext: string,

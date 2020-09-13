@@ -4,7 +4,7 @@ import {
   DefaultTheme,
   NavigationContainer,
 } from '@react-navigation/native';
-import {Stack} from './AppNavigation';
+import {Stack, ThemeContext} from './AppNavigation';
 import Homepage from './src/views/HomePage';
 import NewBillPage from './src/views/NewBillPage';
 import SettingsPage from './src/views/SettingsPage';
@@ -24,11 +24,6 @@ import {
 } from '@react-navigation/stack';
 import AddUpdateFirmDataPage from './src/views/AddUpdateFirmData';
 import {StatusBar} from 'react-native';
-
-export const ThemeContext = React.createContext<{
-  isDark: boolean;
-  toggle: (newValue: boolean) => void;
-}>({isDark: false, toggle: (a) => {}});
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
