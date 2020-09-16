@@ -20,7 +20,10 @@ const FirmDetailsPage: React.FC<FirmDetailsPageProp> = ({navigation}) => {
           setFirmList(data);
           console.log('Updated');
         },
-        (error) => console.error('failed to get data'),
+        (error) => {
+          console.error('failed to get data');
+          console.log(error);
+        },
       );
     });
     return unsubscribe;
