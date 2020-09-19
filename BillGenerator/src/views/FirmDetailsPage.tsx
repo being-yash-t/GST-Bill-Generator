@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {Text, useTheme} from 'react-native-paper';
 import {FirmDetailsPageProp} from '../../AppNavigation';

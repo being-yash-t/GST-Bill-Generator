@@ -44,25 +44,22 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
       <Formik
         initialValues={{...route.params.data}}
         validationSchema={Validation}
-        onSubmit={async (values: FirmData, {}: FormikHelpers<FirmData>) => {
-          const returnValue = saveFirmData(values);
-          if (returnValue instanceof Error) {
-            // TODO: failed
-            console.error(returnValue.message);
-          } else if (returnValue instanceof Promise) {
-            returnValue.then(
-              () => {
-                navigation.goBack();
-                console.log('Success');
-              },
-              (error) => {
-                console.error(error);
-                navigation.goBack();
-                Alert.alert('Failed to save', undefined);
-              },
-            );
-          }
-        }}>
+        validateOnBlur={true}
+        validateOnChange={true}
+        validateOnMount={false}
+        onSubmit={(values: FirmData, {}: FormikHelpers<FirmData>) =>
+          saveFirmData(values).then(
+            () => {
+              navigation.goBack();
+              console.log('Success');
+            },
+            (error: Error) => {
+              console.error(error);
+              navigation.goBack();
+              Alert.alert('Failed to save', error.message, undefined);
+            },
+          )
+        }>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
           <>
             <TextInput
@@ -76,12 +73,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('firmName')}
               onChangeText={handleChange('firmName')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.firmName != undefined}>
-              {errors.firmName}
-            </HelperText>
+            {errors.firmName && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.firmName != undefined}>
+                {errors.firmName}
+              </HelperText>
+            )}
             <TextInput
               mode="outlined"
               value={values.address}
@@ -93,12 +92,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('address')}
               onChangeText={handleChange('address')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.address != undefined}>
-              {errors.address}
-            </HelperText>
+            {errors.address && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.address != undefined}>
+                {errors.address}
+              </HelperText>
+            )}
             <TextInput
               mode="outlined"
               value={values.phone}
@@ -112,12 +113,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('phone')}
               onChangeText={handleChange('phone')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.phone != undefined}>
-              {errors.phone}
-            </HelperText>
+            {errors.phone && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.phone != undefined}>
+                {errors.phone}
+              </HelperText>
+            )}
             <TextInput
               mode="outlined"
               value={values.gstTin}
@@ -130,12 +133,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('gstTin')}
               onChangeText={handleChange('gstTin')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.gstTin != undefined}>
-              {errors.gstTin}
-            </HelperText>
+            {errors.gstTin && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.gstTin != undefined}>
+                {errors.gstTin}
+              </HelperText>
+            )}
             <TextInput
               mode="outlined"
               value={values.stateText}
@@ -148,12 +153,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('stateText')}
               onChangeText={handleChange('stateText')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.stateText != undefined}>
-              {errors.stateText}
-            </HelperText>
+            {errors.stateText && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.stateText != undefined}>
+                {errors.stateText}
+              </HelperText>
+            )}
             <TextInput
               mode="outlined"
               value={values.emailId}
@@ -167,12 +174,14 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
               onBlur={handleBlur('emailId')}
               onChangeText={handleChange('emailId')}
             />
-            <HelperText
-              style={{marginHorizontal: 8}}
-              type="error"
-              visible={errors.emailId != undefined}>
-              {errors.emailId}
-            </HelperText>
+            {errors.emailId && (
+              <HelperText
+                style={{marginHorizontal: 8}}
+                type="error"
+                visible={errors.emailId != undefined}>
+                {errors.emailId}
+              </HelperText>
+            )}
             <CustomButton text="Save" onPress={handleSubmit} />
           </>
         )}

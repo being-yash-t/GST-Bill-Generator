@@ -2,7 +2,7 @@ export class FirmData {
   static blank(): FirmData {
     return new FirmData('', '', undefined, '', '', '', '');
   }
-  id: number | undefined;
+  id?: number;
   firmName: string;
   address: string;
   phone: string;
@@ -30,7 +30,10 @@ export class FirmData {
 }
 
 export class BankDetails {
-  id: number;
+  static blank(): BankDetails {
+    return new BankDetails('', '', '', '', '');
+  }
+  id?: number;
   accountName: string;
   bankName: string;
   bankIFSC: string;
@@ -38,14 +41,12 @@ export class BankDetails {
   accountNo: string;
 
   constructor(
-    id: number,
     accountName: string,
     bankName: string,
     bankIfscCode: string,
     bankBranchName: string,
     accountNo: string,
   ) {
-    this.id = id;
     this.accountName = accountName;
     this.bankName = bankName;
     this.bankBranchName = bankBranchName;

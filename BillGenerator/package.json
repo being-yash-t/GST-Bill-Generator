@@ -1,5 +1,5 @@
 {
-  "name": "BillGenerator",
+  "name": "gst_bill_generator",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "react-native-html-to-pdf": "^0.8.0",
     "react-native-paper": "^4.1.0",
     "react-native-reanimated": "^1.13.0",
+    "react-native-redash": "^15.1.4",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.11.0",
     "react-native-share": "^3.8.0",

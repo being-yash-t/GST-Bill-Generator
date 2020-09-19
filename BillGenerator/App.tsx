@@ -24,6 +24,7 @@ import {
 } from '@react-navigation/stack';
 import AddUpdateFirmDataPage from './src/views/AddUpdateFirmData';
 import {StatusBar} from 'react-native';
+import BankDataForm from './src/views/BankDataForm';
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
@@ -120,6 +121,15 @@ const App = () => {
               component={AddUpdateFirmDataPage}
               options={{
                 title: 'Firm',
+                cardStyleInterpolator:
+                  CardStyleInterpolators.forModalPresentationIOS,
+              }}
+            />
+             <Stack.Screen
+              name="BankDataForm"
+              component={BankDataForm}
+              options={{
+                title: 'Bank Details',
                 cardStyleInterpolator:
                   CardStyleInterpolators.forModalPresentationIOS,
               }}

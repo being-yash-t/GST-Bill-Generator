@@ -2,9 +2,9 @@ import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {View} from 'react-native';
 import {Text, IconButton, Divider} from 'react-native-paper';
-import {FirmData} from '../models/DataModels';
+import {BankDetails} from '../models/DataModels';
 
-const FirmDataCard: React.FC<{data: FirmData; onPress: () => void}> = ({
+const BankDetailsCard: React.FC<{data: BankDetails; onPress: () => void}> = ({
   onPress,
   data,
 }) => {
@@ -21,20 +21,18 @@ const FirmDataCard: React.FC<{data: FirmData; onPress: () => void}> = ({
       }}>
       <View style={{flexDirection: 'row', margin: 4}}>
         <View style={{flex: 1}}>
-          <Text style={{fontSize: 18}}>{data.firmName}</Text>
-          <Text style={{marginTop: 8}}>
-            {data.phone}, {data.address}
-          </Text>
+          <Text style={{fontSize: 18}}>{data.accountNo}</Text>
+          <Text style={{marginTop: 8}}>{data.accountName}</Text>
         </View>
         <IconButton icon="pencil-outline" onPress={onPress} />
       </View>
 
       <Divider style={{marginVertical: 4}} />
-      <Text style={{marginVertical: 4}}>GST TIN: {data.gstTin}</Text>
-      <Text style={{marginVertical: 4}}>State: {data.stateText}</Text>
-      <Text style={{marginVertical: 4}}>Email: {data.emailId}</Text>
+      <Text style={{marginVertical: 4}}>Bank Name: {data.bankName}</Text>
+      <Text style={{marginVertical: 4}}>Branch: {data.bankBranchName}</Text>
+      <Text style={{marginVertical: 4}}>IFSC: {data.bankIFSC}</Text>
     </View>
   );
 };
 
-export default FirmDataCard;
+export default BankDetailsCard;

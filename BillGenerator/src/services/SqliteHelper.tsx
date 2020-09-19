@@ -1,5 +1,5 @@
 import Sqlite from 'react-native-sqlite-storage';
-import {FirmData} from '../models/DataModels';
+import {BankDetails, FirmData} from '../models/DataModels';
 
 let db: Sqlite.SQLiteDatabase | null = null;
 
@@ -107,9 +107,7 @@ export async function getAllFirmData(): Promise<FirmData[]> {
   } else return Promise.reject(Error('Database not initialized'));
 }
 
-export function saveFirmData(
-  firmData: FirmData,
-): Promise<[Sqlite.ResultSet]> | Error {
+export function saveFirmData(firmData: FirmData): Promise<[Sqlite.ResultSet]> {
   if (db != null) {
     let sqlStatement = 'REPLACE INTO "FirmData"(';
     if (firmData.id != undefined) sqlStatement += '"id",';
@@ -126,5 +124,40 @@ export function saveFirmData(
       firmData.stateText,
       firmData.emailId,
     ]);
-  } else return Error('Database not initialized');
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export async function getAllBankData(): Promise<BankDetails[]> {
+  if (db != null) {
+    const data: BankDetails[] = [];
+
+    const results = await db.executeSql('SELECT * FROM "BankDetails";');
+    results.forEach((result) => {
+      for (let i = 0; i < result.rows.length; i++)
+        data.push(result.rows.item(i));
+    });
+
+    return data;
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export function saveBankData(
+  bankData: BankDetails,
+): Promise<[Sqlite.ResultSet]> {
+  if (db != null) {
+    let sqlStatement = 'REPLACE INTO "BankDetails"(';
+    if (bankData.id != undefined) sqlStatement += '"id",';
+    sqlStatement +=
+      '"accountName", "bankName", "bankIFSC", "bankBranchName", "accountNo") VALUES (';
+    if (bankData.id != undefined) sqlStatement += bankData.id + ', ';
+    sqlStatement += ' ?, ?, ?, ?, ?);';
+    console.log(sqlStatement);
+    return db.executeSql(sqlStatement, [
+      bankData.accountName,
+      bankData.bankName,
+      bankData.bankIFSC,
+      bankData.bankBranchName,
+      bankData.accountNo,
+    ]);
+  } else return Promise.reject(Error('Database not initialized'));
 }
