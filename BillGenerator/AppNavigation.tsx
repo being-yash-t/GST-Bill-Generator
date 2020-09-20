@@ -5,6 +5,7 @@ import {
 import {RouteProp} from '@react-navigation/native';
 import {BankDetails, FirmData} from './src/models/DataModels';
 import React from 'react';
+import Animated from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 

@@ -35,10 +35,7 @@ const Validation = yup.object<FirmData>({
   id: yup.number(),
 });
 
-const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
-  navigation,
-  route,
-}) => {
+const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
   return (
     <ScrollView>
       <Formik
@@ -190,4 +187,4 @@ const AddUpdateFirmDataPage: React.FC<FirmDataFormProp> = ({
   );
 };
 
-export default AddUpdateFirmDataPage;
+export default FirmDataForm;

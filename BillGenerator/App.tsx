@@ -17,12 +17,14 @@ import {
   DefaultTheme as PaperDefaultTheme,
   Provider as PaperProvider,
   DarkTheme as PaperDarkTheme,
+  Appbar,
 } from 'react-native-paper';
 import {
   CardStyleInterpolators,
+  HeaderStyleInterpolators,
   TransitionPresets,
 } from '@react-navigation/stack';
-import AddUpdateFirmDataPage from './src/views/AddUpdateFirmData';
+import FirmDataForm from './src/views/FirmDataForm';
 import {StatusBar} from 'react-native';
 import BankDataForm from './src/views/BankDataForm';
 
@@ -53,13 +55,26 @@ const App = () => {
           },
           colors: {
             ...ptheme.colors,
-            primary: '#3498db',
-            accent: '#3498db',
+            primary: '#03A9F4',
+            accent: '#03A9F4',
           },
         }}>
         <NavigationContainer theme={theme}>
           <Stack.Navigator
             screenOptions={{
+              header: (props) => (
+                <Appbar.Header
+                  style={{
+                    backgroundColor: theme.colors.card,
+                  }}>
+                  {props.previous && (
+                    <Appbar.BackAction onPress={props.navigation.goBack} />
+                  )}
+                  <Appbar.Content
+                    title={props.scene.descriptor.options.title}
+                  />
+                </Appbar.Header>
+              ),
               headerTitleStyle: {
                 fontFamily: 'Montserrat-Bold',
                 fontSize: 24,
@@ -72,12 +87,6 @@ const App = () => {
               component={Homepage}
               options={{
                 title: 'GST Bill Generator',
-                headerTitleAlign: 'left',
-                headerTitleStyle: {
-                  fontSize: 36,
-                  fontFamily: 'Montserrat-Bold',
-                },
-                headerStatusBarHeight: 40,
               }}
             />
             <Stack.Screen
@@ -118,20 +127,19 @@ const App = () => {
 
             <Stack.Screen
               name="FirmDataForm"
-              component={AddUpdateFirmDataPage}
+              component={FirmDataForm}
               options={{
                 title: 'Firm',
-                cardStyleInterpolator:
-                  CardStyleInterpolators.forModalPresentationIOS,
+                cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
               }}
             />
-             <Stack.Screen
+            <Stack.Screen
               name="BankDataForm"
               component={BankDataForm}
               options={{
                 title: 'Bank Details',
-                cardStyleInterpolator:
-                  CardStyleInterpolators.forModalPresentationIOS,
+                headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+                cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
               }}
             />
           </Stack.Navigator>

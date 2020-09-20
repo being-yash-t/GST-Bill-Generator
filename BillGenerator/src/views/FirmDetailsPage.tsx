@@ -1,15 +1,14 @@
+import {useIsFocused} from '@react-navigation/native';
 import * as React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
-import {Text, useTheme} from 'react-native-paper';
+import {FAB, Portal} from 'react-native-paper';
 import {FirmDetailsPageProp} from '../../AppNavigation';
 import FirmDataCard from '../components/FirmDataCard';
-import HeaderButton from '../components/HeaderButton';
 import {FirmData} from '../models/DataModels';
 import {getAllFirmData} from '../services/SqliteHelper';
 
 const FirmDetailsPage: React.FC<FirmDetailsPageProp> = ({navigation}) => {
-  const colors = useTheme().colors;
-
+  const isFocused = useIsFocused();
   const [firmList, setFirmList] = React.useState<FirmData[]>();
 
   React.useEffect(() => {
@@ -28,30 +27,34 @@ const FirmDetailsPage: React.FC<FirmDetailsPageProp> = ({navigation}) => {
     return unsubscribe;
   }, []);
 
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <HeaderButton
+  return (
+    <>
+      <FlatList
+        data={firmList}
+        renderItem={(lItem) => (
+          <FirmDataCard
+            data={lItem.item}
+            onPress={() => navigation.push('FirmDataForm', {data: lItem.item})}
+          />
+        )}
+        keyExtractor={(item) => item.id!.toString()}
+      />
+      <Portal>
+        <FAB
+          icon="plus"
+          visible={isFocused}
+          style={{
+            position: 'absolute',
+            bottom: 36,
+            right: 16,
+          }}
+          color="white"
           onPress={() =>
             navigation.push('FirmDataForm', {data: FirmData.blank()})
           }
-          buttonText="Create"
-          textStyle={{color: colors.primary}}
         />
-      ),
-    });
-  }, []);
-  return (
-    <FlatList
-      data={firmList}
-      renderItem={(lItem) => (
-        <FirmDataCard
-          data={lItem.item}
-          onPress={() => navigation.push('FirmDataForm', {data: lItem.item})}
-        />
-      )}
-      keyExtractor={(item) => item.id!.toString()}
-    />
+      </Portal>
+    </>
   );
 };
 
