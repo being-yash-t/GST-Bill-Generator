@@ -3,9 +3,8 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import {RouteProp} from '@react-navigation/native';
-import {BankDetails, FirmData} from './src/models/DataModels';
+import {BankDetails, BayerData, FirmData} from './src/models/DataModels';
 import React from 'react';
-import Animated from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
@@ -20,6 +19,7 @@ type RootStackParamList = {
   OldBillsPage: undefined;
   FirmDataForm: {data: FirmData};
   BankDataForm: {data: BankDetails};
+  BayerDataForm: {data: BayerData};
 };
 
 type HomePageProp = {
@@ -37,6 +37,11 @@ type BankDetailsPageProp = {
   route: RouteProp<RootStackParamList, 'BankDetailsPage'>;
 };
 
+type BayersPageProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'BayersPage'>;
+  route: RouteProp<RootStackParamList, 'BayersPage'>;
+};
+
 type FirmDataFormProp = {
   navigation: StackNavigationProp<RootStackParamList, 'FirmDataForm'>;
   route: RouteProp<RootStackParamList, 'FirmDataForm'>;
@@ -46,6 +51,11 @@ type BankDataFormProp = {
   route: RouteProp<RootStackParamList, 'BankDataForm'>;
 };
 
+type BayerDataFormProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'BayerDataForm'>;
+  route: RouteProp<RootStackParamList, 'BayerDataForm'>;
+};
+
 export {Stack};
 export type {
   HomePageProp,
@@ -53,6 +63,8 @@ export type {
   FirmDetailsPageProp,
   BankDetailsPageProp,
   BankDataFormProp,
+  BayersPageProp,
+  BayerDataFormProp,
 };
 
 export const ThemeContext = React.createContext<{

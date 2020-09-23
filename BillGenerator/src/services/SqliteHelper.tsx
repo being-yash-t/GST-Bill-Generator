@@ -1,5 +1,5 @@
 import Sqlite from 'react-native-sqlite-storage';
-import {BankDetails, FirmData} from '../models/DataModels';
+import {BankDetails, BayerData, FirmData} from '../models/DataModels';
 
 let db: Sqlite.SQLiteDatabase | null = null;
 
@@ -158,6 +158,41 @@ export function saveBankData(
       bankData.bankIFSC,
       bankData.bankBranchName,
       bankData.accountNo,
+    ]);
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export async function getAllBayers(): Promise<BayerData[]> {
+  if (db != null) {
+    const data: BayerData[] = [];
+
+    const results = await db.executeSql('SELECT * FROM "BayerData";');
+    results.forEach((result) => {
+      for (let i = 0; i < result.rows.length; i++)
+        data.push(result.rows.item(i));
+    });
+
+    return data;
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export function saveBayerData(
+  bankData: BayerData,
+): Promise<[Sqlite.ResultSet]> {
+  if (db != null) {
+    let sqlStatement = 'REPLACE INTO "BayerData"(';
+    if (bankData.id != undefined) sqlStatement += '"id",';
+    sqlStatement +=
+      '"bayerName", "siteAddress", "gstTin", "stateText", "email") VALUES (';
+    if (bankData.id != undefined) sqlStatement += bankData.id + ', ';
+    sqlStatement += ' ?, ?, ?, ?, ?);';
+    console.log(sqlStatement);
+    return db.executeSql(sqlStatement, [
+      bankData.bayerName,
+      bankData.siteAddress,
+      bankData.gstTin,
+      bankData.stateText,
+      bankData.email,
     ]);
   } else return Promise.reject(Error('Database not initialized'));
 }

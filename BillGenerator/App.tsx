@@ -27,6 +27,7 @@ import {
 import FirmDataForm from './src/views/FirmDataForm';
 import {StatusBar} from 'react-native';
 import BankDataForm from './src/views/BankDataForm';
+import BayerDataForm from './src/views/BayerDataFrom';
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
@@ -138,6 +139,15 @@ const App = () => {
               component={BankDataForm}
               options={{
                 title: 'Bank Details',
+                headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+                cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+              }}
+            />
+            <Stack.Screen
+              name="BayerDataForm"
+              component={BayerDataForm}
+              options={{
+                title: 'Bayers Details',
                 headerStyleInterpolator: HeaderStyleInterpolators.forFade,
                 cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
               }}

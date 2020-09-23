@@ -56,7 +56,10 @@ export class BankDetails {
 }
 
 export class BayerData {
-  id: number;
+  static blank(): BayerData {
+    return new BayerData('', '', '', '', '');
+  }
+  id?: number;
   bayerName: string;
   siteAddress: string;
   gstTin: string;
@@ -64,14 +67,12 @@ export class BayerData {
   email: string;
 
   constructor(
-    id: number,
     bayerName: string,
     siteAddress: string,
     gstTin: string,
     stateName: string,
     email: string,
   ) {
-    this.id = id;
     this.bayerName = bayerName;
     this.siteAddress = siteAddress;
     this.gstTin = gstTin;
