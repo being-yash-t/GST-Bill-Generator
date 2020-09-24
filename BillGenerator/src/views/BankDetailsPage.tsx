@@ -10,13 +10,13 @@ import {getAllBankData} from '../services/SqliteHelper';
 const BankDetailsPage: React.FC<BankDetailsPageProp> = ({navigation}) => {
   const isFocused = useIsFocused();
 
-  const [firmList, setFirmList] = React.useState<BankDetails[]>();
+  const [bankList, setBankList] = React.useState<BankDetails[]>();
 
   React.useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       getAllBankData().then(
         (data) => {
-          setFirmList(data);
+          setBankList(data);
           console.log('Updated');
         },
         (error) => {
@@ -31,7 +31,7 @@ const BankDetailsPage: React.FC<BankDetailsPageProp> = ({navigation}) => {
   return (
     <>
       <FlatList
-        data={firmList}
+        data={bankList}
         renderItem={(lItem) => (
           <BankDetailsCard
             data={lItem.item}

@@ -21,13 +21,13 @@ import {
 } from 'react-native-paper';
 import {
   CardStyleInterpolators,
-  HeaderStyleInterpolators,
   TransitionPresets,
 } from '@react-navigation/stack';
 import FirmDataForm from './src/views/FirmDataForm';
 import {StatusBar} from 'react-native';
 import BankDataForm from './src/views/BankDataForm';
 import BayerDataForm from './src/views/BayerDataFrom';
+import CartItemForm from './src/views/CartItemForm';
 
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
@@ -139,7 +139,6 @@ const App = () => {
               component={BankDataForm}
               options={{
                 title: 'Bank Details',
-                headerStyleInterpolator: HeaderStyleInterpolators.forFade,
                 cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
               }}
             />
@@ -148,7 +147,14 @@ const App = () => {
               component={BayerDataForm}
               options={{
                 title: 'Bayers Details',
-                headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+                cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+              }}
+            />
+            <Stack.Screen
+              name="CartItemForm"
+              component={CartItemForm}
+              options={{
+                title: 'Cart Item',
                 cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
               }}
             />

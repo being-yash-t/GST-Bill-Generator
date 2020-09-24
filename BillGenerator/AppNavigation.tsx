@@ -3,7 +3,12 @@ import {
   StackNavigationProp,
 } from '@react-navigation/stack';
 import {RouteProp} from '@react-navigation/native';
-import {BankDetails, BayerData, FirmData} from './src/models/DataModels';
+import {
+  BankDetails,
+  BayerData,
+  CartItem,
+  FirmData,
+} from './src/models/DataModels';
 import React from 'react';
 
 const Stack = createStackNavigator();
@@ -20,6 +25,7 @@ type RootStackParamList = {
   FirmDataForm: {data: FirmData};
   BankDataForm: {data: BankDetails};
   BayerDataForm: {data: BayerData};
+  CartItemForm: {data: CartItem};
 };
 
 type HomePageProp = {
@@ -35,6 +41,11 @@ type FirmDetailsPageProp = {
 type BankDetailsPageProp = {
   navigation: StackNavigationProp<RootStackParamList, 'BankDetailsPage'>;
   route: RouteProp<RootStackParamList, 'BankDetailsPage'>;
+};
+
+type CartItemProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'CartItemsPage'>;
+  route: RouteProp<RootStackParamList, 'CartItemsPage'>;
 };
 
 type BayersPageProp = {
@@ -56,6 +67,11 @@ type BayerDataFormProp = {
   route: RouteProp<RootStackParamList, 'BayerDataForm'>;
 };
 
+type CartItemFormProp = {
+  navigation: StackNavigationProp<RootStackParamList, 'CartItemForm'>;
+  route: RouteProp<RootStackParamList, 'CartItemForm'>;
+};
+
 export {Stack};
 export type {
   HomePageProp,
@@ -65,6 +81,8 @@ export type {
   BankDataFormProp,
   BayersPageProp,
   BayerDataFormProp,
+  CartItemProp,
+  CartItemFormProp,
 };
 
 export const ThemeContext = React.createContext<{

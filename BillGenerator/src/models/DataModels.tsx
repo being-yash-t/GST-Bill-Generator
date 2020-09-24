@@ -107,7 +107,10 @@ export class BillInfo {
 }
 
 export class CartItem {
-  id: number;
+  static blank(): CartItem {
+    return new CartItem('', 0, 0, 0, '');
+  }
+  id?: number;
   title: string;
   hsnCode: number;
   rate: number;
@@ -118,14 +121,12 @@ export class CartItem {
   }
 
   constructor(
-    id: number,
     title: string,
     hsnCode: number,
     rate: number,
     quantity: number,
     per: string,
   ) {
-    this.id = id;
     this.title = title;
     this.hsnCode = hsnCode;
     this.rate = rate;

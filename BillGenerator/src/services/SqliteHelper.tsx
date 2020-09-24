@@ -1,5 +1,5 @@
 import Sqlite from 'react-native-sqlite-storage';
-import {BankDetails, BayerData, FirmData} from '../models/DataModels';
+import {BankDetails, BayerData, CartItem, FirmData} from '../models/DataModels';
 
 let db: Sqlite.SQLiteDatabase | null = null;
 
@@ -74,7 +74,6 @@ function initDatabase() {
         '"title"	TEXT NOT NULL,' +
         '"hsnCode"	INTEGER NOT NULL,' +
         '"rate"	NUMERIC NOT NULL,' +
-        '"quantity"	NUMERIC NOT NULL,' +
         '"per"	TEXT NOT NULL,' +
         'PRIMARY KEY("id" AUTOINCREMENT)' +
         ');',
@@ -193,6 +192,37 @@ export function saveBayerData(
       bankData.gstTin,
       bankData.stateText,
       bankData.email,
+    ]);
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export async function getAllCartItems(): Promise<CartItem[]> {
+  if (db != null) {
+    const data: CartItem[] = [];
+
+    const results = await db.executeSql('SELECT * FROM "CartItem";');
+    results.forEach((result) => {
+      for (let i = 0; i < result.rows.length; i++)
+        data.push(result.rows.item(i));
+    });
+
+    return data;
+  } else return Promise.reject(Error('Database not initialized'));
+}
+
+export function saveCartItem(bankData: CartItem): Promise<[Sqlite.ResultSet]> {
+  if (db != null) {
+    let sqlStatement = 'REPLACE INTO "CartItem"(';
+    if (bankData.id != undefined) sqlStatement += '"id",';
+    sqlStatement += '"title", "hsnCode", "rate", "per") VALUES (';
+    if (bankData.id != undefined) sqlStatement += bankData.id + ', ';
+    sqlStatement += ' ?, ?, ?, ? );';
+    console.log(sqlStatement);
+    return db.executeSql(sqlStatement, [
+      bankData.title,
+      bankData.hsnCode,
+      bankData.rate,
+      bankData.per,
     ]);
   } else return Promise.reject(Error('Database not initialized'));
 }
