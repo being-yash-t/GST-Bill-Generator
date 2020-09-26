@@ -56,7 +56,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.bayerName}
               error={errors.bayerName != undefined}
-              placeholder="Bayer Name"
+              label="Bayer Name"
               textContentType="organizationName"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
@@ -76,7 +76,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.gstTin}
               error={errors.gstTin != undefined}
-              placeholder="GST TIN"
+              label="GST TIN"
               autoCapitalize="characters"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
@@ -96,7 +96,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.email}
               error={errors.email != undefined}
-              placeholder="Email Address"
+              label="Email Address"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={30}
@@ -116,7 +116,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.siteAddress}
               error={errors.siteAddress != undefined}
-              placeholder="Site Address"
+              label="Site Address"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={40}
@@ -135,7 +135,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.stateText}
               error={errors.stateText != undefined}
-              placeholder="State Name"
+              label="State Name"
               style={{marginHorizontal: 16, marginVertical: 8}}
               autoCapitalize="characters"
               numberOfLines={1}

@@ -63,7 +63,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.firmName}
               error={errors.firmName != undefined}
-              placeholder="Firm Name"
+              label="Firm Name"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={20}
@@ -82,7 +82,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.address}
               error={errors.address != undefined}
-              placeholder="Address"
+              label="Address"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={50}
@@ -101,7 +101,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.phone}
               error={errors.phone != undefined}
-              placeholder="Phone no"
+              label="Phone no"
               textContentType="telephoneNumber"
               keyboardType="phone-pad"
               style={{marginHorizontal: 16, marginVertical: 8}}
@@ -122,7 +122,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.gstTin}
               error={errors.gstTin != undefined}
-              placeholder="GST TIN"
+              label="GST TIN"
               style={{marginHorizontal: 16, marginVertical: 8}}
               autoCapitalize="characters"
               numberOfLines={1}
@@ -142,7 +142,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.stateText}
               error={errors.stateText != undefined}
-              placeholder="State"
+              label="State"
               textContentType="addressState"
               style={{marginHorizontal: 18, marginVertical: 8}}
               numberOfLines={1}
@@ -162,7 +162,7 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.emailId}
               error={errors.emailId != undefined}
-              placeholder="Email"
+              label="Email"
               textContentType="emailAddress"
               keyboardType="email-address"
               style={{marginHorizontal: 16, marginVertical: 8}}

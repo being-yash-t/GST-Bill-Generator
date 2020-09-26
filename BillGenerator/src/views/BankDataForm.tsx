@@ -59,7 +59,7 @@ const BankDataForm: React.FC<BankDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.accountName}
               error={errors.accountName != undefined}
-              placeholder="Account Name"
+              label="Account Name"
               textContentType="organizationName"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
@@ -79,7 +79,7 @@ const BankDataForm: React.FC<BankDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.accountNo}
               error={errors.accountNo != undefined}
-              placeholder="Account No"
+              label="Account No"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={50}
@@ -98,7 +98,7 @@ const BankDataForm: React.FC<BankDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.bankName}
               error={errors.bankName != undefined}
-              placeholder="Bank Name"
+              label="Bank Name"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={12}
@@ -117,7 +117,7 @@ const BankDataForm: React.FC<BankDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.bankBranchName}
               error={errors.bankBranchName != undefined}
-              placeholder="Bank Branch"
+              label="Bank Branch"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={12}
@@ -136,7 +136,7 @@ const BankDataForm: React.FC<BankDataFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.bankIFSC}
               error={errors.bankIFSC != undefined}
-              placeholder="Bank IFSC"
+              label="Bank IFSC"
               style={{marginHorizontal: 16, marginVertical: 8}}
               autoCapitalize="characters"
               numberOfLines={1}

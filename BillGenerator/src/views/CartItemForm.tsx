@@ -48,7 +48,7 @@ const CartItemForm: React.FC<CartItemFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.title}
               error={errors.title != undefined}
-              placeholder="Item Name"
+              label="Item Name"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={20}
@@ -67,7 +67,7 @@ const CartItemForm: React.FC<CartItemFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.rate.toString()}
               error={errors.rate != undefined}
-              placeholder="Rate"
+              label="Rate"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={50}
@@ -87,7 +87,7 @@ const CartItemForm: React.FC<CartItemFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.per}
               error={errors.per != undefined}
-              placeholder="Per"
+              label="Per"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
               maxLength={12}
@@ -106,7 +106,7 @@ const CartItemForm: React.FC<CartItemFormProp> = ({navigation, route}) => {
               mode="outlined"
               value={values.hsnCode.toString()}
               error={errors.hsnCode != undefined}
-              placeholder="HSN Code"
+              label="HSN Code"
               keyboardType="numeric"
               style={{marginHorizontal: 16, marginVertical: 8}}
               numberOfLines={1}
