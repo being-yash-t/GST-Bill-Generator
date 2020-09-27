@@ -41,9 +41,6 @@ const FirmDataForm: React.FC<FirmDataFormProp> = ({navigation, route}) => {
       <Formik
         initialValues={{...route.params.data}}
         validationSchema={Validation}
-        validateOnBlur={true}
-        validateOnChange={true}
-        validateOnMount={false}
         onSubmit={(values: FirmData, {}: FormikHelpers<FirmData>) =>
           saveFirmData(values).then(
             () => {

@@ -2,12 +2,14 @@ import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {View} from 'react-native';
 import {Divider, IconButton, Text} from 'react-native-paper';
+import {IconSource} from 'react-native-paper/lib/typescript/src/components/Icon';
 import {BayerData} from '../models/DataModels';
 
-const BayerDataCard: React.FC<{data: BayerData; onPress: () => void}> = ({
-  data,
-  onPress,
-}) => {
+const BayerDataCard: React.FC<{
+  data: BayerData;
+  onPress: () => void;
+  icon: IconSource;
+}> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
     <View
@@ -24,7 +26,7 @@ const BayerDataCard: React.FC<{data: BayerData; onPress: () => void}> = ({
           <Text style={{fontSize: 18}}>{data.bayerName}</Text>
           <Text style={{marginTop: 8}}>{data.email}</Text>
         </View>
-        <IconButton icon="pencil-outline" onPress={onPress} />
+        <IconButton icon={icon} onPress={onPress} />
       </View>
 
       <Divider style={{marginVertical: 4}} />

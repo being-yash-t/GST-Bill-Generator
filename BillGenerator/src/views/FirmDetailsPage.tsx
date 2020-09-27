@@ -34,6 +34,7 @@ const FirmDetailsPage: React.FC<FirmDetailsPageProp> = ({navigation}) => {
         renderItem={(lItem) => (
           <FirmDataCard
             data={lItem.item}
+            icon="pencil-outline"
             onPress={() => navigation.push('FirmDataForm', {data: lItem.item})}
           />
         )}

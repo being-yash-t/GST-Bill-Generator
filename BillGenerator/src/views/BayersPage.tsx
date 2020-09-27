@@ -35,6 +35,7 @@ const BayersPage: React.FC<BayersPageProp> = ({navigation}) => {
         renderItem={(lItem) => (
           <BayerDataCard
             data={lItem.item}
+            icon="pencil-outline"
             onPress={() => navigation.push('BayerDataForm', {data: lItem.item})}
           />
         )}

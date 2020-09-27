@@ -1,13 +1,15 @@
 import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {View} from 'react-native';
-import {IconButton, Text} from 'react-native-paper';
+import {Divider, IconButton, Text} from 'react-native-paper';
+import {IconSource} from 'react-native-paper/lib/typescript/src/components/Icon';
 import {CartItem} from '../models/DataModels';
 
-const CartItemCard: React.FC<{data: CartItem; onPress: () => void}> = ({
-  data,
-  onPress,
-}) => {
+const CartItemCard: React.FC<{
+  data: CartItem;
+  onPress: () => void;
+  icon: IconSource;
+}> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
     <View
@@ -21,12 +23,15 @@ const CartItemCard: React.FC<{data: CartItem; onPress: () => void}> = ({
       }}>
       <View style={{flexDirection: 'row', margin: 4}}>
         <View style={{flex: 1}}>
-          <Text style={{fontSize: 18}}>{data.title}</Text>
-          <Text style={{marginTop: 8}}>
-            {data.rate} {data.per}
+          <Text style={{fontSize: 18, marginBottom: 8}}>{data.title}</Text>
+          <Divider />
+          <Text style={{marginVertical: 4, marginTop: 8}}>
+            Rate: {data.rate}
           </Text>
+          <Text style={{marginVertical: 4}}>Per: {data.per}</Text>
+          <Text style={{marginTop: 4}}>HSN Code: {data.hsnCode}</Text>
         </View>
-        <IconButton icon="pencil-outline" onPress={onPress} />
+        <IconButton icon={icon} onPress={onPress} />
       </View>
     </View>
   );

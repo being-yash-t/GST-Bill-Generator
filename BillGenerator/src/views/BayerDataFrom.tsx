@@ -34,9 +34,6 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
       <Formik
         initialValues={{...route.params.data}}
         validationSchema={Validation}
-        validateOnBlur={true}
-        validateOnChange={true}
-        validateOnMount={false}
         onSubmit={(values: BayerData, {}: FormikHelpers<BayerData>) =>
           saveBayerData(values).then(
             () => {
@@ -101,6 +98,7 @@ const BayerDataForm: React.FC<BayerDataFormProp> = ({navigation, route}) => {
               numberOfLines={1}
               maxLength={30}
               textContentType="emailAddress"
+              keyboardType="email-address"
               onBlur={handleBlur('email')}
               onChangeText={handleChange('email')}
             />

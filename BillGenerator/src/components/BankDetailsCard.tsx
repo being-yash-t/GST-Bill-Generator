@@ -2,12 +2,14 @@ import {useTheme} from '@react-navigation/native';
 import * as React from 'react';
 import {View} from 'react-native';
 import {Text, IconButton, Divider} from 'react-native-paper';
+import {IconSource} from 'react-native-paper/lib/typescript/src/components/Icon';
 import {BankDetails} from '../models/DataModels';
 
-const BankDetailsCard: React.FC<{data: BankDetails; onPress: () => void}> = ({
-  onPress,
-  data,
-}) => {
+const BankDetailsCard: React.FC<{
+  data: BankDetails;
+  onPress: () => void;
+  icon: IconSource;
+}> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
     <View
@@ -24,7 +26,7 @@ const BankDetailsCard: React.FC<{data: BankDetails; onPress: () => void}> = ({
           <Text style={{fontSize: 18}}>{data.accountNo}</Text>
           <Text style={{marginTop: 8}}>{data.accountName}</Text>
         </View>
-        <IconButton icon="pencil-outline" onPress={onPress} />
+        <IconButton icon={icon} onPress={onPress} />
       </View>
 
       <Divider style={{marginVertical: 4}} />

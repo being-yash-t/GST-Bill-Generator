@@ -1,4 +1,4 @@
-import { useIsFocused } from '@react-navigation/native';
+import {useIsFocused} from '@react-navigation/native';
 import * as React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import {FAB, Portal, Text, useTheme} from 'react-native-paper';
@@ -35,6 +35,7 @@ const BankDetailsPage: React.FC<BankDetailsPageProp> = ({navigation}) => {
         renderItem={(lItem) => (
           <BankDetailsCard
             data={lItem.item}
+            icon="pencil-outline"
             onPress={() => navigation.push('BankDataForm', {data: lItem.item})}
           />
         )}
@@ -49,7 +50,7 @@ const BankDetailsPage: React.FC<BankDetailsPageProp> = ({navigation}) => {
             bottom: 36,
             right: 16,
           }}
-          color='white'
+          color="white"
           onPress={() =>
             navigation.push('BankDataForm', {data: BankDetails.blank()})
           }

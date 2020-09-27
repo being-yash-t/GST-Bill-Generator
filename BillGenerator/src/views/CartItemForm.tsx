@@ -26,9 +26,6 @@ const CartItemForm: React.FC<CartItemFormProp> = ({navigation, route}) => {
         //@ts-ignore
         initialValues={{...route.params.data}}
         validationSchema={Validation}
-        validateOnBlur={true}
-        validateOnChange={true}
-        validateOnMount={false}
         onSubmit={(values: CartItem, {}: FormikHelpers<CartItem>) =>
           saveCartItem(values).then(
             () => {

@@ -31,7 +31,7 @@ export class FirmData {
 
 export class BankDetails {
   static blank(): BankDetails {
-    return new BankDetails('', '', '', '', '');
+    return new BankDetails(undefined, '', '', '', '', '');
   }
   id?: number;
   accountName: string;
@@ -41,12 +41,14 @@ export class BankDetails {
   accountNo: string;
 
   constructor(
+    Id: number | undefined,
     accountName: string,
     bankName: string,
     bankIfscCode: string,
     bankBranchName: string,
     accountNo: string,
   ) {
+    this.id = Id;
     this.accountName = accountName;
     this.bankName = bankName;
     this.bankBranchName = bankBranchName;
@@ -57,7 +59,7 @@ export class BankDetails {
 
 export class BayerData {
   static blank(): BayerData {
-    return new BayerData('', '', '', '', '');
+    return new BayerData(undefined, '', '', '', '', '');
   }
   id?: number;
   bayerName: string;
@@ -67,12 +69,14 @@ export class BayerData {
   email: string;
 
   constructor(
+    Id: number | undefined,
     bayerName: string,
     siteAddress: string,
     gstTin: string,
     stateName: string,
     email: string,
   ) {
+    this.id = Id;
     this.bayerName = bayerName;
     this.siteAddress = siteAddress;
     this.gstTin = gstTin;
@@ -108,7 +112,7 @@ export class BillInfo {
 
 export class CartItem {
   static blank(): CartItem {
-    return new CartItem('', 0, 0, 0, '');
+    return new CartItem(undefined, '', 0, 0, 0, '');
   }
   id?: number;
   title: string;
@@ -121,12 +125,14 @@ export class CartItem {
   }
 
   constructor(
+    Id: number | undefined,
     title: string,
     hsnCode: number,
     rate: number,
     quantity: number,
     per: string,
   ) {
+    this.id = Id;
     this.title = title;
     this.hsnCode = hsnCode;
     this.rate = rate;

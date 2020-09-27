@@ -1,4 +1,3 @@
-import {HeaderBackButton} from '@react-navigation/stack';
 import React from 'react';
 import {StyleProp, TextStyle} from 'react-native';
 import {Button, Text} from 'react-native-paper';

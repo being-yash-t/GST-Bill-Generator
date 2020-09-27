@@ -98,8 +98,20 @@ export async function getAllFirmData(): Promise<FirmData[]> {
 
     const results = await db.executeSql('SELECT * FROM "FirmData";');
     results.forEach((result) => {
-      for (let i = 0; i < result.rows.length; i++)
-        data.push(result.rows.item(i));
+      for (let i = 0; i < result.rows.length; i++) {
+        const currentObj: FirmData = result.rows.item(i) as FirmData;
+        data.push(
+          new FirmData(
+            currentObj.firmName,
+            currentObj.address,
+            currentObj.id,
+            currentObj.phone,
+            currentObj.gstTin,
+            currentObj.stateText,
+            currentObj.emailId,
+          ),
+        );
+      }
     });
 
     return data;
@@ -132,8 +144,19 @@ export async function getAllBankData(): Promise<BankDetails[]> {
 
     const results = await db.executeSql('SELECT * FROM "BankDetails";');
     results.forEach((result) => {
-      for (let i = 0; i < result.rows.length; i++)
-        data.push(result.rows.item(i));
+      for (let i = 0; i < result.rows.length; i++) {
+        const currentObj: BankDetails = result.rows.item(i) as BankDetails;
+        data.push(
+          new BankDetails(
+            currentObj.id,
+            currentObj.accountName,
+            currentObj.bankName,
+            currentObj.bankIFSC,
+            currentObj.bankBranchName,
+            currentObj.accountNo,
+          ),
+        );
+      }
     });
 
     return data;
@@ -167,8 +190,19 @@ export async function getAllBayers(): Promise<BayerData[]> {
 
     const results = await db.executeSql('SELECT * FROM "BayerData";');
     results.forEach((result) => {
-      for (let i = 0; i < result.rows.length; i++)
-        data.push(result.rows.item(i));
+      for (let i = 0; i < result.rows.length; i++) {
+        const currentObj: BayerData = result.rows.item(i) as BayerData;
+        data.push(
+          new BayerData(
+            currentObj.id,
+            currentObj.bayerName,
+            currentObj.siteAddress,
+            currentObj.gstTin,
+            currentObj.stateText,
+            currentObj.email,
+          ),
+        );
+      }
     });
 
     return data;
@@ -202,8 +236,19 @@ export async function getAllCartItems(): Promise<CartItem[]> {
 
     const results = await db.executeSql('SELECT * FROM "CartItem";');
     results.forEach((result) => {
-      for (let i = 0; i < result.rows.length; i++)
-        data.push(result.rows.item(i));
+      for (let i = 0; i < result.rows.length; i++) {
+        const currentObj: CartItem = result.rows.item(i) as CartItem;
+        data.push(
+          new CartItem(
+            currentObj.id,
+            currentObj.title,
+            currentObj.hsnCode,
+            currentObj.rate,
+            currentObj.quantity,
+            currentObj.per,
+          ),
+        );
+      }
     });
 
     return data;

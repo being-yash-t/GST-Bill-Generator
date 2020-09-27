@@ -35,6 +35,7 @@ const CartItemsPage: React.FC<CartItemProp> = ({navigation}) => {
         renderItem={(lItem) => (
           <CartItemCard
             data={lItem.item}
+            icon="pencil-outline"
             onPress={() => navigation.push('CartItemForm', {data: lItem.item})}
           />
         )}
