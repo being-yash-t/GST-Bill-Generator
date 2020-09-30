@@ -7,8 +7,8 @@ import {FirmData} from '../models/DataModels';
 
 const FirmDataCard: React.FC<{
   data: FirmData;
-  onPress: () => void;
-  icon: IconSource;
+  onPress?: () => void;
+  icon?: IconSource;
 }> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
@@ -28,7 +28,9 @@ const FirmDataCard: React.FC<{
             {data.phone}, {data.address}
           </Text>
         </View>
-        <IconButton icon={icon} onPress={onPress} />
+        {icon && (
+          <IconButton icon={icon} color={colors.text} onPress={onPress} />
+        )}
       </View>
 
       <Divider style={{marginVertical: 4}} />

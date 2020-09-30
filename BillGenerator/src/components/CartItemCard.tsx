@@ -7,8 +7,8 @@ import {CartItem} from '../models/DataModels';
 
 const CartItemCard: React.FC<{
   data: CartItem;
-  onPress: () => void;
-  icon: IconSource;
+  onPress?: () => void;
+  icon?: IconSource;
 }> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
@@ -31,7 +31,9 @@ const CartItemCard: React.FC<{
           <Text style={{marginVertical: 4}}>Per: {data.per}</Text>
           <Text style={{marginTop: 4}}>HSN Code: {data.hsnCode}</Text>
         </View>
-        <IconButton icon={icon} onPress={onPress} />
+        {icon && (
+          <IconButton icon={icon} color={colors.text} onPress={onPress} />
+        )}
       </View>
     </View>
   );

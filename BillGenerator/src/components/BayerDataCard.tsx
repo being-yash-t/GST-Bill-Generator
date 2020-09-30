@@ -7,8 +7,8 @@ import {BayerData} from '../models/DataModels';
 
 const BayerDataCard: React.FC<{
   data: BayerData;
-  onPress: () => void;
-  icon: IconSource;
+  onPress?: () => void;
+  icon?: IconSource;
 }> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
@@ -26,7 +26,9 @@ const BayerDataCard: React.FC<{
           <Text style={{fontSize: 18}}>{data.bayerName}</Text>
           <Text style={{marginTop: 8}}>{data.email}</Text>
         </View>
-        <IconButton icon={icon} onPress={onPress} />
+        {icon && (
+          <IconButton icon={icon} color={colors.text} onPress={onPress} />
+        )}
       </View>
 
       <Divider style={{marginVertical: 4}} />

@@ -7,8 +7,8 @@ import {BankDetails} from '../models/DataModels';
 
 const BankDetailsCard: React.FC<{
   data: BankDetails;
-  onPress: () => void;
-  icon: IconSource;
+  onPress?: () => void;
+  icon?: IconSource;
 }> = ({onPress, data, icon}) => {
   const colors = useTheme().colors;
   return (
@@ -26,7 +26,9 @@ const BankDetailsCard: React.FC<{
           <Text style={{fontSize: 18}}>{data.accountNo}</Text>
           <Text style={{marginTop: 8}}>{data.accountName}</Text>
         </View>
-        <IconButton icon={icon} onPress={onPress} />
+        {icon && (
+          <IconButton icon={icon} color={colors.text} onPress={onPress} />
+        )}
       </View>
 
       <Divider style={{marginVertical: 4}} />
