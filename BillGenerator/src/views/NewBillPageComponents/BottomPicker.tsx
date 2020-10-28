@@ -61,7 +61,6 @@ const SheetViews = gestureHandlerRootHOC(function GestureExample({
 const BottomPicker: React.FC<BottomModelProps> = (props: BottomModelProps) => {
   return (
     <Modal
-      testID={'modal'}
       isVisible={props.modalVisible}
       onBackButtonPress={() => props.setModalVisible(false)}
       style={{justifyContent: 'flex-end', margin: 0}}>

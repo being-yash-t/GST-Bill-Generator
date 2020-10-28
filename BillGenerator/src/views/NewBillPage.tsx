@@ -130,19 +130,24 @@ const NewBillPage: React.FC = () => {
         <Divider />
         {selectedBankDetails && <BankDetailsCard data={selectedBankDetails} />}
       </ScrollView>
-      <BottomPicker
-        data={bottomListData}
-        setModalVisible={setModalVisible}
-        modalVisible={modalVisible}
-        returnItem={(data) => {
-          if (data instanceof FirmData) setFirm(data);
-          else if (data instanceof CartItem)
-            setParticulars([...selectedParticulars, data]);
-          else if (data instanceof BayerData) setBayer(data);
-          else if (data instanceof BankDetails) setBankDetails(data);
-          else Alert.alert('Error', 'Unknown type selected');
-        }}
-      />
+      {React.useMemo(
+        () => (
+          <BottomPicker
+            data={bottomListData}
+            setModalVisible={setModalVisible}
+            modalVisible={modalVisible}
+            returnItem={(data) => {
+              if (data instanceof FirmData) setFirm(data);
+              else if (data instanceof CartItem)
+                setParticulars([...selectedParticulars, data]);
+              else if (data instanceof BayerData) setBayer(data);
+              else if (data instanceof BankDetails) setBankDetails(data);
+              else Alert.alert('Error', 'Unknown type selected');
+            }}
+          />
+        ),
+        [bottomListData, modalVisible],
+      )}
     </>
   );
 };
